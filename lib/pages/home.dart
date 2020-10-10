@@ -16,7 +16,16 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Container(
-        child: SafeArea(child: Text('home.dart')),
+        child: SafeArea(
+            child: Scaffold(
+              appBar: AppBar(
+                title: Text('HOME'),
+              ),
+              body: Container(
+                child: Text('home.dart'),
+              ),
+            ),
+        ),
       ),
     );
   }
