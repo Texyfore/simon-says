@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class GameLoad extends StatefulWidget {
   @override
@@ -30,6 +31,12 @@ class _GameLoadState extends State<GameLoad> {
                 fontSize: 40.0,
                 color: letterColor,
               ),
+            ),
+
+            // Forgó
+            SpinKitFadingCube(
+              size: 40.0,
+              color: letterColor,
             ),
 
             // Játék tulajdonságai

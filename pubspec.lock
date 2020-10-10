@@ -69,6 +69,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
   flutter_bloc:
     dependency: "direct main"
     description:
@@ -76,6 +77,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.6"
+=======
+  flutter_spinkit:
+    dependency: "direct main"
+    description:
+      name: flutter_spinkit
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.1.2+1"
+>>>>>>> origin/master
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -178,5 +188,10 @@ packages:
     source: hosted
     version: "2.1.0-nullsafety.3"
 sdks:
+<<<<<<< HEAD
   dart: ">=2.10.0-110 <2.11.0"
   flutter: ">=1.16.0"
+=======
+  dart: ">=2.10.0-0.0.dev <2.10.0"
+  flutter: ">=0.1.4 <2.0.0"
+>>>>>>> origin/master

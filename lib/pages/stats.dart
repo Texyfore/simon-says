@@ -19,6 +19,16 @@ class _StatsState extends State<Stats> {
       appBar: AppBar(
         backgroundColor: backgroundColor,
         elevation: 0,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_rounded,
+            size: 30.0,
+          ),
+          splashRadius: 25.0,
+        ),
       ),
       body: SizedBox.expand(
         child: Column(

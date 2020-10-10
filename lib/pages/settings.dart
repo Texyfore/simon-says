@@ -13,8 +13,19 @@ class Settings extends StatelessWidget {
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
+        toolbarHeight: 70.0,
         backgroundColor: backgroundColor,
         elevation: 0,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_rounded,
+            size: 30.0,
+          ),
+          splashRadius: 25.0,
+        ),
       ),
       body: SizedBox.expand(
         child: Column(
