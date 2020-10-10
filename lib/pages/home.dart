@@ -3,12 +3,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:simon_says/pages/colorchanger.dart';
 
-class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
+class Home extends StatelessWidget {
   final Color darkColor = Color(0xFF3F3F3F);
   final Color letterColor = Color(0xFFFEFEFD);
   final Shadow letterShadow = Shadow(
