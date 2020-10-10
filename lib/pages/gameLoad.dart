@@ -36,7 +36,7 @@ class _GameLoadState extends State<GameLoad> {
             Padding(
               padding: EdgeInsets.only(bottom: 40.0),
               child: Text(
-                'Tiles: 9\nSpeed: 14',
+                'Csempék: 9\nSebesség: 14',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Poppins',
