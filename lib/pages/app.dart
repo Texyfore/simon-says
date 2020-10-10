@@ -15,6 +15,7 @@ import 'package:flutter_launcher_icons/utils.dart';
 import 'package:flutter_launcher_icons/xml_templates.dart';
 
 
+
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
