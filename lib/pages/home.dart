@@ -5,6 +5,7 @@ import 'package:flutter/painting.dart';
 
 class Home extends StatefulWidget {
   @override
+
   _HomeState createState() => _HomeState();
 }
 
@@ -26,7 +27,7 @@ class _HomeState extends State<Home> {
             children: [
               // Cím
               Text(
-                'ciceró\nmondja',
+                'Ciceró\nMondja',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Poppins',
