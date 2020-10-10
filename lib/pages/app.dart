@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:simon_says/pages/colorchanger.dart';
 import 'package:simon_says/pages/game.dart';
 import 'package:simon_says/pages/gameLoad.dart';
 import 'package:simon_says/pages/home.dart';
@@ -21,6 +22,7 @@ class AppWidget extends StatelessWidget {
         '/settings': (context) => Settings(),
         '/gameLoad': (context) => GameLoad(),
         '/game': (context) => Game(),
+        '/colorchanger': (context) => ColorChanger(),
       },
     );
   }
