@@ -5,12 +5,10 @@ import 'package:flutter/painting.dart';
 
 class Home extends StatefulWidget {
   @override
-
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-
   final Color darkColor = Color(0xFF3F3F3F);
   final Color letterColor = Color(0xFFFEFEFD);
 
@@ -45,7 +43,9 @@ class _HomeState extends State<Home> {
                   children: [
                     // Játék indítása gomb
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/gameLoad");
+                      },
                       child: Text(
                         'Játék',
                         style: TextStyle(
@@ -57,14 +57,19 @@ class _HomeState extends State<Home> {
                       style: ElevatedButton.styleFrom(
                         primary: darkColor,
                         minimumSize: Size(double.infinity, 60),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)),
                       ),
                     ),
-                    SizedBox(height: 30.0,),
+                    SizedBox(
+                      height: 30.0,
+                    ),
 
                     // Statisztikák gomb
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/stats");
+                      },
                       child: Text(
                         'Statisztikák',
                         style: TextStyle(
@@ -76,14 +81,19 @@ class _HomeState extends State<Home> {
                       style: ElevatedButton.styleFrom(
                         primary: darkColor,
                         minimumSize: Size(double.infinity, 60),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)),
                       ),
                     ),
-                    SizedBox(height: 30.0,),
+                    SizedBox(
+                      height: 30.0,
+                    ),
 
                     // Beállítások gomb
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/settings");
+                      },
                       child: Text(
                         'Beállítások',
                         style: TextStyle(
@@ -95,7 +105,8 @@ class _HomeState extends State<Home> {
                       style: ElevatedButton.styleFrom(
                         primary: darkColor,
                         minimumSize: Size(double.infinity, 60),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)),
                       ),
                     ),
                   ],
