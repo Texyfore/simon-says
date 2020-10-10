@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simon_says/widgets/settings/numberCubit.dart';
 
 final Color backgroundColor = Color(0xFF3F3F3F);
@@ -7,16 +8,11 @@ final Color letterColor = Color(0xFFFEFEFD);
 class NumberSetting<T extends NumberCubit> extends StatelessWidget {
   final String name;
 
-  T cubit;
-
-  NumberSetting({
-    Key key,
-    this.name = "",
-    @required this.cubit,
-  }) : super(key: key);
+  NumberSetting({Key key, this.name = ""}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var cubit = context.bloc<T>();
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 120.0),
       child: Column(
@@ -50,7 +46,7 @@ class NumberSetting<T extends NumberCubit> extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  this.cubit.decrease();
+                  cubit.decrease();
                 },
                 color: backgroundColor,
                 splashRadius: 20.0,
@@ -60,15 +56,17 @@ class NumberSetting<T extends NumberCubit> extends StatelessWidget {
               // Szám
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
-                child: Text(
-                  '6',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 26.0,
-                    color: letterColor,
-                  ),
-                ),
+                child: BlocBuilder<T, int>(builder: (context, snapshot) {
+                  return Text(
+                    '$snapshot',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 26.0,
+                      color: letterColor,
+                    ),
+                  );
+                }),
               ),
               // Plusz gomb
               IconButton(
@@ -84,7 +82,7 @@ class NumberSetting<T extends NumberCubit> extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  this.cubit.increase();
+                  cubit.increase();
                 },
                 color: backgroundColor,
                 splashRadius: 20.0,

@@ -14,6 +14,7 @@ import 'package:flutter_launcher_icons/main.dart';
 import 'package:flutter_launcher_icons/utils.dart';
 import 'package:flutter_launcher_icons/xml_templates.dart';
 
+import 'bloc/speedCubit.dart';
 import 'bloc/tilesCubit.dart';
 
 class AppWidget extends StatelessWidget {
@@ -23,9 +24,11 @@ class AppWidget extends StatelessWidget {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
-    return BlocProvider<TilesCubit>(
-      create: (_) => TilesCubit(),
-      lazy: false,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => TilesCubit()),
+        BlocProvider(create: (_) => SpeedCubit()),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: '/home',

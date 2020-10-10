@@ -2,14 +2,13 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simon_says/bloc/speedCubit.dart';
 import 'package:simon_says/bloc/tilesCubit.dart';
 import './../widgets/settings/numberSetting.dart';
 
 class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var tilesCubit = context.bloc<TilesCubit>();
-
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
@@ -72,12 +71,11 @@ class Settings extends StatelessWidget {
             // Csempék beállítása
             NumberSetting<TilesCubit>(
               name: "Csempék",
-              cubit: tilesCubit,
             ),
             // Sebesség beállítása
-            /*NumberSetting(
+            NumberSetting<SpeedCubit>(
               name: "Sebesség",
-            ),*/
+            ),
           ],
         ),
       ),
