@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:simon_says/pages/colorchanger.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class Home extends StatelessWidget {
   final Color darkColor = Color(0xFF3F3F3F);
@@ -13,6 +15,10 @@ class Home extends StatelessWidget {
   );
 
   @override
+  Future<AudioPlayer> playLocalAsset() async {
+    AudioCache cache = new AudioCache();
+    return await cache.play("assets/sounds/cicero_loop_128.mp3");
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       body: SizedBox.expand(
@@ -49,13 +55,25 @@ class Home extends StatelessWidget {
                         onPressed: () {
                           Navigator.pushNamed(context, "/gameLoad");
                         },
-                        child: Text(
-                          'Játék',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 20.0,
-                            color: letterColor,
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.gamepad_rounded,
+                              color: letterColor,
+                              size: 28.0,
+                            ),
+                            SizedBox(width: 10.0,),
+                            Text(
+                              'Játék',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 20.0,
+                                color: letterColor,
+                              ),
+                            ),
+                            SizedBox(),
+                          ],
                         ),
                         style: ElevatedButton.styleFrom(
                           primary: darkColor,
@@ -73,13 +91,24 @@ class Home extends StatelessWidget {
                         onPressed: () {
                           Navigator.pushNamed(context, "/stats");
                         },
-                        child: Text(
-                          'Statisztikák',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 20.0,
-                            color: letterColor,
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.equalizer_rounded,
+                              color: letterColor,
+                              size: 30.0,
+                            ),
+                            SizedBox(width: 10.0,),
+                            Text(
+                              'Statisztikák',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 20.0,
+                                color: letterColor,
+                              ),
+                            ),
+                          ],
                         ),
                         style: ElevatedButton.styleFrom(
                           primary: darkColor,
@@ -97,13 +126,24 @@ class Home extends StatelessWidget {
                         onPressed: () {
                           Navigator.pushNamed(context, "/settings");
                         },
-                        child: Text(
-                          'Beállítások',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 20.0,
-                            color: letterColor,
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.settings_rounded,
+                              color: letterColor,
+                              size: 28.0,
+                            ),
+                            SizedBox(width: 10.0,),
+                            Text(
+                              'Beállítások',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 20.0,
+                                color: letterColor,
+                              ),
+                            ),
+                          ],
                         ),
                         style: ElevatedButton.styleFrom(
                           primary: darkColor,
