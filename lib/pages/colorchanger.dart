@@ -3,10 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class ColorChanger extends StatefulWidget {
-
   final Widget child;
-  const ColorChanger({Key key, this.child}):super(key: key);
-
+  const ColorChanger({Key key, this.child}) : super(key: key);
 
   @override
   _ColorChangerState createState() => _ColorChangerState();
@@ -28,12 +26,19 @@ class _ColorChangerState extends State<ColorChanger> {
   }
 
   @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
+  @override
   void initState() {
     super.initState();
     _timer = Timer.periodic(Duration(seconds: _duration), (Timer t) {
       // print('colorIndex = $colorIndex');
       setState(() {
-        colorIndex = colorIndex == Colors.accents.length - 1 ? 0 : colorIndex+1;
+        colorIndex =
+            colorIndex == Colors.accents.length - 1 ? 0 : colorIndex + 1;
       });
     });
   }
