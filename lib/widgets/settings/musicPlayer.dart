@@ -3,8 +3,22 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-class MusicPlayer extends StatelessWidget {
+class MusicPlayer extends StatefulWidget {
+  Widget child;
+
+  MusicPlayer({Key key, @required this.child}) : super(key: key);
+
+  @override
+  _MusicPlayerState createState() => _MusicPlayerState();
+}
+
+//TODO: React to Music setting
+class _MusicPlayerState extends State<MusicPlayer> {
   Future<AudioPlayer> player;
+
+  _MusicPlayerState() : super() {
+    _loadAudio();
+  }
 
   void _loadAudio() async {
     AudioCache cache = new AudioCache();
@@ -31,11 +45,19 @@ class MusicPlayer extends StatelessWidget {
     _pauseAudio();
   }
 
-  Widget child;
-  String targetName;
-  MusicPlayer({Key key, @required this.child}) : super(key: key) {
-    _loadAudio();
+  void disposePlayer() async {
+    var _player = await player;
+    await _player.stop();
   }
+
+  @override
+  void dispose() {
+    //TODO: Sound disposal
+    disposePlayer();
+    super.dispose();
+  }
+
+  String targetName;
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +70,6 @@ class MusicPlayer extends StatelessWidget {
           }
         },
         key: Key("music-visibility-detector"),
-        child: this.child);
+        child: this.widget.child);
   }
 }
