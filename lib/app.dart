@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simon_says/bloc/musicCubit.dart';
 import 'package:simon_says/pages/game.dart';
 import 'package:simon_says/pages/gameLoad.dart';
 import 'package:simon_says/pages/home.dart';
@@ -17,7 +18,6 @@ import 'package:flutter_launcher_icons/xml_templates.dart';
 import 'bloc/speedCubit.dart';
 import 'bloc/tilesCubit.dart';
 
-
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -29,6 +29,7 @@ class AppWidget extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => TilesCubit()),
         BlocProvider(create: (_) => SpeedCubit()),
+        BlocProvider(create: (_) => MusicCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
