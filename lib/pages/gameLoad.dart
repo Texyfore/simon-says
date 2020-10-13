@@ -60,9 +60,10 @@ class _GameLoadState extends State<GameLoad> {
             Padding(
               padding: EdgeInsets.only(bottom: 40.0),
               child: BlocBuilder<TilesCubit, int>(builder: (context, tiles) {
-                return BlocBuilder<SpeedCubit, int>(builder: (context, speed) {
+                return BlocBuilder<SpeedCubit, Speed>(
+                    builder: (context, speed) {
                   return Text(
-                    'Csempék: $tiles\nSebesség: $speed',
+                    'Csempék: $tiles\nSebesség: ${speed_to_string(speed)}',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Poppins',

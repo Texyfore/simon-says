@@ -4,6 +4,7 @@ import 'package:simon_says/bloc/musicCubit.dart';
 import 'package:simon_says/bloc/speedCubit.dart';
 import 'package:simon_says/bloc/tilesCubit.dart';
 import 'package:simon_says/widgets/settings/boolSetting.dart';
+import 'package:simon_says/widgets/settings/speedSetting.dart';
 import './../widgets/settings/numberSetting.dart';
 
 class Settings extends StatelessWidget {
@@ -75,8 +76,7 @@ class Settings extends StatelessWidget {
                   name: "Csempék",
                 ),
                 // Sebesség beállítása
-                //TODO: Sebesség Enum
-                NumberSetting<SpeedCubit>(
+                SpeedSetting(
                   name: "Sebesség",
                 ),
                 BoolSetting<MusicCubit>(name: "Zene"),
