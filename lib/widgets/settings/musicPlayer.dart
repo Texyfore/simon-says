@@ -13,18 +13,36 @@ class MusicPlayer extends StatefulWidget {
 }
 
 //TODO: React to Music setting
-class _MusicPlayerState extends State<MusicPlayer> {
+class _MusicPlayerState extends State<MusicPlayer>
+    with SingleTickerProviderStateMixin {
   Future<AudioPlayer> player;
 
-  _MusicPlayerState() : super() {
+  AnimationController _volumeController;
+  @override
+  void initState() {
+    super.initState();
+    _volumeController = AnimationController(
+        lowerBound: 0.0,
+        upperBound: 1.0,
+        debugLabel: "Music volume animator",
+        vsync: this,
+        value: 1.0,
+        duration: Duration(seconds: 1));
+    _volumeController.addListener(this._onVolumeAnimation);
     _loadAudio();
+  }
+
+  void _onVolumeAnimation() async {
+    print('VOLUME CHANGE! ${_volumeController.value}');
+    var _player = await player;
+    await _player.setVolume(_volumeController.value);
   }
 
   void _loadAudio() async {
     AudioCache cache = new AudioCache();
     player = cache.loop("sounds/cicero_loop_128.mp3");
-    var _player = await player;
-    await _player.pause();
+    //var _player = await player;
+    //await _player.pause();
   }
 
   Future<void> _playAudio() async {
@@ -38,11 +56,16 @@ class _MusicPlayerState extends State<MusicPlayer> {
   }
 
   void isActive() async {
-    _playAudio();
+    print("Activating...");
+    await _volumeController.animateTo(1.0);
+    print("Active!");
   }
 
   void isInactive() async {
-    _pauseAudio();
+    print("DeActivating...");
+    //await _volumeController.animateBack(0.25);
+    _volumeController.value = 0.0;
+    print("DeActive!");
   }
 
   void disposePlayer() async {
@@ -54,6 +77,8 @@ class _MusicPlayerState extends State<MusicPlayer> {
   void dispose() {
     //TODO: Sound disposal
     disposePlayer();
+    _volumeController.view.removeListener(this._onVolumeAnimation);
+    _volumeController.dispose();
     super.dispose();
   }
 
