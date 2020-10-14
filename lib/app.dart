@@ -14,9 +14,11 @@ import 'package:flutter_launcher_icons/ios.dart';
 import 'package:flutter_launcher_icons/main.dart';
 import 'package:flutter_launcher_icons/utils.dart';
 import 'package:flutter_launcher_icons/xml_templates.dart';
+import 'package:simon_says/widgets/musicPlayer.dart';
 
 import 'bloc/speedCubit.dart';
 import 'bloc/tilesCubit.dart';
+import 'bloc/volumeCubit.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -30,17 +32,20 @@ class AppWidget extends StatelessWidget {
         BlocProvider(create: (_) => TilesCubit()),
         BlocProvider(create: (_) => SpeedCubit()),
         BlocProvider(create: (_) => MusicCubit()),
+        BlocProvider(create: (_) => VolumeCubit()),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        initialRoute: '/home',
-        routes: {
-          '/home': (context) => Home(),
-          '/stats': (context) => Stats(),
-          '/settings': (context) => Settings(),
-          '/gameLoad': (context) => GameLoad(),
-          '/game': (context) => GameScreen(),
-        },
+      child: MusicPlayer(
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          initialRoute: '/home',
+          routes: {
+            '/home': (context) => Home(),
+            '/stats': (context) => Stats(),
+            '/settings': (context) => Settings(),
+            '/gameLoad': (context) => GameLoad(),
+            '/game': (context) => GameScreen(),
+          },
+        ),
       ),
     );
   }

@@ -1,7 +1,8 @@
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:visibility_detector/visibility_detector.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simon_says/bloc/volumeCubit.dart';
 
 class MusicPlayer extends StatefulWidget {
   Widget child;
@@ -55,22 +56,13 @@ class _MusicPlayerState extends State<MusicPlayer>
     await _player.pause();
   }
 
-  void isActive() async {
-    print("Activating...");
-    await _volumeController.animateTo(1.0);
-    print("Active!");
-  }
-
-  void isInactive() async {
-    print("DeActivating...");
-    //await _volumeController.animateBack(0.25);
-    _volumeController.value = 0.0;
-    print("DeActive!");
-  }
-
   void disposePlayer() async {
     var _player = await player;
     await _player.stop();
+  }
+
+  void animateVolume(double volume) async {
+    await _volumeController.animateTo(volume);
   }
 
   @override
@@ -86,15 +78,10 @@ class _MusicPlayerState extends State<MusicPlayer>
 
   @override
   Widget build(BuildContext context) {
-    return VisibilityDetector(
-        onVisibilityChanged: (VisibilityInfo visibilityInfo) {
-          if (visibilityInfo.visibleFraction > .5) {
-            isActive();
-          } else {
-            isInactive();
-          }
+    return BlocListener<VolumeCubit, double>(
+        listener: (BuildContext context, volume) {
+          animateVolume(volume);
         },
-        key: Key("music-visibility-detector"),
         child: this.widget.child);
   }
 }

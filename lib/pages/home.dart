@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
+import 'package:simon_says/bloc/volumeCubit.dart';
 import 'package:simon_says/pages/colorchanger.dart';
-import 'package:simon_says/widgets/settings/musicPlayer.dart';
+import 'package:visibility_detector/visibility_detector.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Home extends StatelessWidget {
   final Color darkColor = Color(0xFF3F3F3F);
@@ -15,7 +17,16 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MusicPlayer(
+    var volume = context.bloc<VolumeCubit>();
+    return VisibilityDetector(
+      key: Key("home-visibility-detector"),
+      onVisibilityChanged: (info) {
+        if (info.visibleFraction > 0.5) {
+          volume.set(1.0);
+        } else {
+          volume.set(0.0);
+        }
+      },
       child: Scaffold(
         body: SizedBox.expand(
           child: ColorChanger(
