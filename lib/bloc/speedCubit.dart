@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:simon_says/widgets/settings/numberCubit.dart';
 
 class SpeedCubit extends Cubit<Speed> {
   SpeedCubit() : super(Speed.NORMAL);
@@ -11,9 +10,7 @@ class SpeedCubit extends Cubit<Speed> {
     emit(Speed.values[index]);
   }
 
-  @override
   void increase() => _increaseSpeed(1);
-  @override
   void decrease() => _increaseSpeed(-1);
 }
 

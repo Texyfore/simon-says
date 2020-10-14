@@ -1,35 +1,56 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simon_says/bloc/buttonState.dart';
+import 'package:simon_says/bloc/tilesCubit.dart';
+import 'package:simon_says/widgets/GameButton.dart';
 import 'package:simon_says/widgets/PauseMenuWidget.dart';
 
 class GameScreen extends StatelessWidget {
-
-  Widget GameButton(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(8.0),
-      child: Container(
-        height: 100,
-        width: 100,
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Text('Hello'),
-        ),
-      ),
-    );
-  }
-  Widget getRow(BuildContext context) {
+  Widget getRow(List<Widget> elements) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        GameButton(context),
-        GameButton(context),
-      ],
+      children: elements,
     );
   }
 
+  List<ButtonState> getButtonStates(int count) {
+    var buttonStates = List<ButtonState>();
+    for (var i = 0; i < count; i++) {
+      var buttonState = ButtonState();
+      buttonStates.add(buttonState);
+    }
+    return buttonStates;
+  }
+
+  List<Widget> getRows(List<ButtonState> buttons) {
+    var buttonCount = buttons.length;
+    var rowCount = sqrt(buttonCount).floor();
+    var rows = List<Widget>();
+    var currentRow = List<Widget>();
+    var i = 0;
+    for (var j = 0; j < buttonCount; j++) {
+      currentRow.add(GameButton(buttonState: buttons[j]));
+      i++;
+      if (i >= rowCount) {
+        i = 0;
+        rows.add(getRow(currentRow));
+        currentRow = List<Widget>();
+      }
+    }
+    if (i != 0) {
+      rows.add(getRow(currentRow));
+    }
+    return rows.reversed.toList();
+  }
 
   @override
   Widget build(BuildContext context) {
+    //I really hope we aren't planning to change the tile count during gameplay
+
+    var buttonCount = context.bloc<TilesCubit>().state;
+    var states = getButtonStates(buttonCount);
+    var rows = getRows(states);
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 70.0,
@@ -50,15 +71,7 @@ class GameScreen extends StatelessWidget {
         ),
       ),
       backgroundColor: backgroundColor,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            getRow(context),
-            getRow(context),
-          ],
-        ),
-      ),
+      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: rows),
     );
   }
 }

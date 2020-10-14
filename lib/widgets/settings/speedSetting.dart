@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simon_says/bloc/speedCubit.dart';
-import 'package:simon_says/widgets/settings/numberCubit.dart';
 
 final Color backgroundColor = Color(0xFF3F3F3F);
 final Color letterColor = Color(0xFFFEFEFD);
