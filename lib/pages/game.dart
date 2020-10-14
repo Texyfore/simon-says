@@ -1,14 +1,32 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:simon_says/widgets/PauseMenuWidget.dart';
 
-class Game extends StatefulWidget {
-  @override
-  _GameState createState() => _GameState();
-}
+class GameScreen extends StatelessWidget {
 
-class _GameState extends State<Game> {
-  final Color backgroundColor = Color(0xFF3F3F3F);
-  final Color letterColor = Color(0xFFFEFEFD);
+  Widget GameButton(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Container(
+        height: 100,
+        width: 100,
+        child: ElevatedButton(
+          onPressed: () {},
+          child: Text('Hello'),
+        ),
+      ),
+    );
+  }
+  Widget getRow(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        GameButton(context),
+        GameButton(context),
+      ],
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +37,10 @@ class _GameState extends State<Game> {
         elevation: 0,
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            showDialog(
+              context: context,
+              builder: (context) => PauseMenuWidget(),
+            );
           },
           icon: Icon(
             Icons.pause_rounded,
@@ -29,9 +50,18 @@ class _GameState extends State<Game> {
         ),
       ),
       backgroundColor: backgroundColor,
-      body: Container(
-        child: Text('game.dart'),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            getRow(context),
+            getRow(context),
+          ],
+        ),
       ),
     );
   }
 }
+
+final Color backgroundColor = Color(0xFF3F3F3F);
+final Color letterColor = Color(0xFFFEFEFD);

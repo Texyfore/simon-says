@@ -39,7 +39,7 @@ class AppWidget extends StatelessWidget {
           '/stats': (context) => Stats(),
           '/settings': (context) => Settings(),
           '/gameLoad': (context) => GameLoad(),
-          '/game': (context) => Game(),
+          '/game': (context) => GameScreen(),
         },
       ),
     );
