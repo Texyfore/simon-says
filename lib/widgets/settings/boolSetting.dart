@@ -15,7 +15,7 @@ class BoolSetting<T extends BoolCubit> extends StatelessWidget {
   Widget build(BuildContext context) {
     var cubit = context.bloc<T>();
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 120.0),
+      padding: EdgeInsets.symmetric(horizontal: 120.0, vertical: 30.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

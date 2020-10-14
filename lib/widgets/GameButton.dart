@@ -18,8 +18,8 @@ class _GameButtonState extends State<GameButton> {
     //Padding értéke
     var paddingSize = 6.0;
     // csempék száma egy teli sorban
-    var nOfTilesInRow = 2;
-    var nOfButtons = 7;
+    var nOfTilesInRow = widget.tilesInRow;
+    var nOfButtons = widget.tilesCount;
     // egy csempe magassága és szélessége
     var tileSize = (nOfButtons == 7 || nOfButtons == 8) ? (MediaQuery.of(context).size.width / nOfTilesInRow) - (6 * nOfTilesInRow * paddingSize) : (MediaQuery.of(context).size.width / nOfTilesInRow) - (nOfTilesInRow * paddingSize);
 

@@ -28,7 +28,7 @@ class _MusicPlayerState extends State<MusicPlayer>
         debugLabel: "Music volume animator",
         vsync: this,
         value: 1.0,
-        duration: Duration(seconds: 1));
+        duration: Duration(milliseconds: 200));
     _volumeController.addListener(this._onVolumeAnimation);
     _loadAudio();
   }

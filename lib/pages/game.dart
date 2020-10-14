@@ -51,8 +51,7 @@ class GameScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     //I really hope we aren't planning to change the tile count during gameplay
 
-    //var buttonCount = context.bloc<TilesCubit>().state;
-    var buttonCount = 7;
+    var buttonCount = context.bloc<TilesCubit>().state;
     var states = getButtonStates(buttonCount);
     var rows = getRows(states);
     return Scaffold(

@@ -41,7 +41,7 @@ class SpeedSetting extends StatelessWidget {
                 height: double.infinity,
                 width: double.infinity,
                 child: Icon(
-                  Icons.remove_rounded,
+                  Icons.navigate_before_rounded,
                 ),
               ),
               onPressed: () {
@@ -84,7 +84,7 @@ class SpeedSetting extends StatelessWidget {
                 height: double.infinity,
                 width: double.infinity,
                 child: Icon(
-                  Icons.add_rounded,
+                  Icons.navigate_next_rounded,
                 ),
               ),
               onPressed: () {
