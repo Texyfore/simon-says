@@ -30,7 +30,10 @@ class GameScreen extends StatelessWidget {
     var currentRow = List<Widget>();
     var i = 0;
     for (var j = 0; j < buttonCount; j++) {
-      currentRow.add(GameButton(buttonState: buttons[j]));
+      currentRow.add(GameButton(
+          buttonState: buttons[j],
+          tilesInRow: rowCount,
+          tilesCount: buttonCount));
       i++;
       if (i >= rowCount) {
         i = 0;
