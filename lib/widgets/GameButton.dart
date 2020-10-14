@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:simon_says/bloc/buttonState.dart';
 
 class GameButton extends StatefulWidget {
-  GameButton({Key key, this.buttonState}) : super(key: key);
+  GameButton({Key key, this.buttonState, this.tilesInRow}) : super(key: key);
   final ButtonState buttonState;
+  final int tilesInRow;
   @override
   _GameButtonState createState() => _GameButtonState();
 }
