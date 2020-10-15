@@ -2,25 +2,22 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simon_says/bloc/buttonState.dart';
+import 'package:simon_says/bloc/gameController.dart';
 import 'package:simon_says/bloc/tilesCubit.dart';
 import 'package:simon_says/widgets/GameButton.dart';
 import 'package:simon_says/widgets/PauseMenuWidget.dart';
 
-class GameScreen extends StatelessWidget {
+class GameScreen extends StatefulWidget {
+  @override
+  _GameScreenState createState() => _GameScreenState();
+}
+
+class _GameScreenState extends State<GameScreen> {
   Widget getRow(List<Widget> elements) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: elements,
     );
-  }
-
-  List<ButtonState> getButtonStates(int count) {
-    var buttonStates = List<ButtonState>();
-    for (var i = 0; i < count; i++) {
-      var buttonState = ButtonState();
-      buttonStates.add(buttonState);
-    }
-    return buttonStates;
   }
 
   List<Widget> getRows(List<ButtonState> buttons) {
@@ -47,13 +44,28 @@ class GameScreen extends StatelessWidget {
     return rows.reversed.toList();
   }
 
+  GameController gameController;
+  List<ButtonState> buttons;
+
+  @override
+  void initState() {
+    var buttonCount = context.bloc<TilesCubit>().state;
+    gameController = GameController(buttonCount: buttonCount);
+    buttons = gameController.generateButtonStates();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    gameController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     //I really hope we aren't planning to change the tile count during gameplay
 
-    var buttonCount = context.bloc<TilesCubit>().state;
-    var states = getButtonStates(buttonCount);
-    var rows = getRows(states);
+    var rows = getRows(buttons);
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 70.0,

@@ -18,8 +18,10 @@ class _GameLoadState extends State<GameLoad> {
 
   Timer _timer;
 
-  _GameLoadState() : super() {
-    _timer = Timer(Duration(milliseconds: 5500), () {
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer(Duration(milliseconds: 3000), () {
       Navigator.pushReplacementNamed(context, "/game");
     });
   }
