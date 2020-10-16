@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:simon_says/bloc/buttonState.dart';
 
@@ -12,6 +14,30 @@ class GameButton extends StatefulWidget {
 }
 
 class _GameButtonState extends State<GameButton> {
+  StreamSubscription<ButtonEvent> _subscription;
+  @override
+  void initState() {
+    super.initState();
+    _subscription = widget.buttonState.incomingEvents.listen((event) {
+      setState(() {
+        this.flash = true;
+        Timer(Duration(milliseconds: 500), () {
+          setState(() {
+            this.flash = false;
+          });
+        });
+      });
+    });
+  }
+
+  bool flash = false;
+
+  @override
+  void dispose() {
+    _subscription.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     //Padding értéke
@@ -31,10 +57,22 @@ class _GameButtonState extends State<GameButton> {
       child: Container(
         height: tileSize,
         width: tileSize,
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(primary: widget.buttonState.color),
-          onPressed: () {},
-          //child: Text('Hello'),
+        child: Stack(
+          children: [
+            SizedBox.expand(
+              child: ElevatedButton(
+                style:
+                    ElevatedButton.styleFrom(primary: widget.buttonState.color),
+                onPressed: () {},
+                //child: Text('Hello'),
+              ),
+            ),
+            Container(
+              color: this.flash
+                  ? Color.fromARGB(128, 128, 128, 128)
+                  : Colors.transparent,
+            ),
+          ],
         ),
       ),
     );

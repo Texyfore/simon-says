@@ -6,4 +6,7 @@ class ButtonState {
   ButtonState({this.color, this.incomingEvents});
 }
 
-class ButtonEvent {}
+class ButtonEvent {
+  bool flash;
+  ButtonEvent({this.flash = false});
+}
