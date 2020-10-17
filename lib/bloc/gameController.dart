@@ -4,6 +4,12 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:simon_says/bloc/buttonState.dart';
 
+class _ButtonPreset {
+  Color color;
+  String sound;
+  _ButtonPreset(this.color, this.sound);
+}
+
 class GameController {
   int buttonCount;
   List<_ControllableButton> buttons = List<_ControllableButton>();
@@ -17,27 +23,20 @@ class GameController {
     });
   }
 
-  final List<Color> colors = [
-    Colors.green,
-    Colors.red,
-    Colors.blue,
-    Colors.yellow,
-    Colors.purple,
-    Colors.white,
-    Colors.deepOrange,
-    Colors.indigo,
-    Colors.lightGreen,
-    Colors.lime,
-    Colors.orange,
+  final List<_ButtonPreset> buttonPresets = [
+    _ButtonPreset(Colors.red, "C#5"),
+    _ButtonPreset(Colors.green, "E#5"),
+    _ButtonPreset(Colors.blue, "F#5"),
+    _ButtonPreset(Colors.orange, "G#5"),
   ];
 
   List<ButtonState> generateButtonStates() {
     var states = List<ButtonState>();
-    colors.shuffle();
     for (var i = 0; i < this.buttonCount; i++) {
       var stream = StreamController<ButtonEvent>();
+      var preset = buttonPresets[i];
       var state = ButtonState(
-        color: colors[i],
+        color: preset.color,
         incomingEvents: stream.stream,
       );
       states.add(state);
