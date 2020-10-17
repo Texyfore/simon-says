@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:simon_says/bloc/buttonState.dart';
+import 'package:simon_says/bloc/speedCubit.dart';
 
 class _ButtonPreset {
   Color color;
@@ -12,25 +13,28 @@ class _ButtonPreset {
 
 class GameController {
   int buttonCount;
+  Speed speed;
   List<_ControllableButton> buttons = List<_ControllableButton>();
   Timer _timer;
   Random random = Random();
-  //TODO: Get game speed
-  GameController({this.buttonCount});
+  GameController({this.buttonCount = 4, this.speed = Speed.NORMAL});
   List<_ControllableButton> correctString = List();
   List<_ControllableButton> currentString = List();
   void nextRound() {
     print("Next round");
+    //Új gomb hozzáadása a kombinációhoz
     var index = random.nextInt(buttons.length);
     var button = buttons[index];
     correctString.add(button);
     currentString = List.from(correctString);
+    //Kombináció lejátszása
     var i = 0;
-    _timer = Timer.periodic(Duration(milliseconds: 500), (timer) {
+    _timer = Timer.periodic(speedToDuration(this.speed), (timer) {
       if (i < correctString.length) {
         correctString[i].streamController.add(ButtonEvent(flash: true));
         i++;
       } else {
+        //Ha nincs több gomb, akkor hagyja abba a lejátszást
         _timer.cancel();
         print("Timer over");
       }
@@ -38,13 +42,17 @@ class GameController {
   }
 
   void input(_ControllableButton button) {
+    //Ha éppen a kombináció játszódik le, akkor tiltsa le a bemeneted
+    //TODO: Gomb állapotának átállítása
     if (_timer != null && _timer.isActive) {
       return;
     }
+    //Ha a következő gomb megegyezik a lenyomott gombbal
     if (currentString[0] == button) {
-      //Correct choice
+      //Egy gomb ellenőrizve
       currentString.removeAt(0);
       print("Right choice");
+      //Ha nem kell több gombot ellenőrizni
       if (currentString.length == 0) {
         //Next round
         Timer(Duration(seconds: 1), () {
@@ -87,6 +95,7 @@ class GameController {
 
   List<ButtonState> generateButtonStates() {
     var states = List<ButtonState>();
+    //Gombok létrehozása
     for (var i = 0; i < this.buttonCount; i++) {
       //Ezt a stream-et a dispose metódusban bezárjuk
       // ignore: close_sinks

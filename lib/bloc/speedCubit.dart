@@ -33,3 +33,21 @@ String speedToString(Speed speed) {
   }
   return "Ismeretlen";
 }
+
+Duration speedToDuration(Speed speed) {
+  switch (speed) {
+    case Speed.SLOW:
+      return const Duration(seconds: 2);
+      break;
+    case Speed.NORMAL:
+      return const Duration(seconds: 1);
+      break;
+    case Speed.FAST:
+      return const Duration(milliseconds: 500);
+      break;
+    case Speed.VERY_FAST:
+      return const Duration(milliseconds: 250);
+      break;
+  }
+  return speedToDuration(Speed.NORMAL);
+}

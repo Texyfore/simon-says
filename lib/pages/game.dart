@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simon_says/bloc/buttonState.dart';
 import 'package:simon_says/bloc/gameController.dart';
+import 'package:simon_says/bloc/speedCubit.dart';
 import 'package:simon_says/bloc/tilesCubit.dart';
 import 'package:simon_says/widgets/GameButton.dart';
 import 'package:simon_says/widgets/PauseMenuWidget.dart';
@@ -49,10 +50,11 @@ class _GameScreenState extends State<GameScreen> {
 
   @override
   void initState() {
-    var buttonCount = context.bloc<TilesCubit>().state;
-    gameController = GameController(buttonCount: buttonCount);
-    buttons = gameController.generateButtonStates();
     super.initState();
+    var buttonCount = context.bloc<TilesCubit>().state;
+    var speed = context.bloc<SpeedCubit>().state;
+    gameController = GameController(buttonCount: buttonCount, speed: speed);
+    buttons = gameController.generateButtonStates();
   }
 
   @override
