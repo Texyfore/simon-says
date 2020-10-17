@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Custom grey color -->
-    <color name="custgrey">#3F3F3F</color>
+    <color name="splash_color">#3F3F3F</color>
 </resources>
