@@ -24,10 +24,31 @@ class GameController {
   }
 
   final List<_ButtonPreset> buttonPresets = [
-    _ButtonPreset(Colors.red, "C#5"),
-    _ButtonPreset(Colors.green, "E#5"),
-    _ButtonPreset(Colors.blue, "F#5"),
-    _ButtonPreset(Colors.orange, "G#5"),
+    _ButtonPreset(Color(0xFFF34336), "F#8"),
+    _ButtonPreset(Color(0xFFFEC008), "F8"),
+    _ButtonPreset(Color(0xFF01BDD6), "E8"),
+    _ButtonPreset(Color(0xFF9B28AF), "C#8"),
+    _ButtonPreset(Color(0xFF4DB151), "C8"),
+    _ButtonPreset(Color(0xFF1D944C), "A#7"),
+    _ButtonPreset(Color(0xFFE62062), "G#7"),
+    _ButtonPreset(Color(0xFFFFEA3A), "F#7"),
+    _ButtonPreset(Color(0xFF91B16A), "F7"),
+    _ButtonPreset(Color(0xFFC95D63), "E7"),
+    _ButtonPreset(Color(0xFFC2F970), "C#7"),
+    _ButtonPreset(Color(0xFFCA4DA7), "C7"),
+    _ButtonPreset(Color(0xFF6889FE), "A#6"),
+    _ButtonPreset(Color(0xFF5FB7D6), "G#6"),
+    _ButtonPreset(Color(0xFFEDAE49), "F#6"),
+    _ButtonPreset(Color(0xFFBEBAE5), "F6"),
+    _ButtonPreset(Color(0xFF795246), "E6"),
+    _ButtonPreset(Color(0xFF643AB6), "C#6"),
+    _ButtonPreset(Color(0xFF4251B8), "C6"),
+    _ButtonPreset(Color(0xFF009788), "A#5"),
+    _ButtonPreset(Color(0xFFFD9805), "G#5"),
+    _ButtonPreset(Color(0xFF581010), "F#5"),
+    _ButtonPreset(Color(0xFF567922), "F5"),
+    _ButtonPreset(Color(0xFF253940), "E5"),
+
   ];
 
   List<ButtonState> generateButtonStates() {
