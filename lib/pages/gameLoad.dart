@@ -41,13 +41,10 @@ class _GameLoadState extends State<GameLoad> {
           children: [
             SizedBox(),
             // Cím
-            Text(
-              'Ciceró\nMondja',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 40.0,
-                color: letterColor,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 60.0),
+              child: Image(
+                image: AssetImage('assets/cicmoicon.png'),
               ),
             ),
 

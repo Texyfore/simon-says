@@ -37,16 +37,10 @@ class Home extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   // Cím
-                  Text(
-                    'Ciceró\nMondja',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 40.0,
-                      color: letterColor,
-                      shadows: <Shadow>[
-                        letterShadow,
-                      ],
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 60.0),
+                    child: Image(
+                      image: AssetImage('assets/cicmoicon2.png'),
                     ),
                   ),
 
