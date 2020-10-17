@@ -63,32 +63,41 @@ class _GameScreenState extends State<GameScreen> {
     super.dispose();
   }
 
+  void onBack() {
+    showDialog(
+      context: context,
+      builder: (context) => PauseMenuWidget(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     //I really hope we aren't planning to change the tile count during gameplay
 
     var rows = getRows(buttons);
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 70.0,
-        backgroundColor: backgroundColor,
-        elevation: 0,
-        leading: IconButton(
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (context) => PauseMenuWidget(),
-            );
-          },
-          icon: Icon(
-            Icons.pause_rounded,
-            size: 30.0,
+    return WillPopScope(
+      onWillPop: () async {
+        onBack();
+        return true;
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: 70.0,
+          backgroundColor: backgroundColor,
+          elevation: 0,
+          leading: IconButton(
+            onPressed: onBack,
+            icon: Icon(
+              Icons.pause_rounded,
+              size: 30.0,
+            ),
+            splashRadius: 25.0,
           ),
-          splashRadius: 25.0,
         ),
+        backgroundColor: backgroundColor,
+        body:
+            Column(mainAxisAlignment: MainAxisAlignment.center, children: rows),
       ),
-      backgroundColor: backgroundColor,
-      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: rows),
     );
   }
 }
