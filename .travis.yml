@@ -14,6 +14,7 @@ before_script:
 - "./flutter/bin/flutter doctor"
 script:
 - "./flutter/bin/flutter -v build ios --no-codesign"
+- "zip -r /Users/travis/build/Prog-grammers/simon-says/build.zip /Users/travis/build/Prog-grammers/simon-says/build/ios/iphoneos/Runner.app"
 cache:
   directories:
   - "$HOME/.pub-cache"
@@ -21,7 +22,7 @@ deploy:
   provider: releases
   api_key:
     secure: uiZCFB9GR0SGBn+y3p848tVX73P9oPDhQwrGEzqkSWL39ttGBoW5gMXeFWUDYnDe2dKmEOzjqbqOJEuWKnNsL7LXUva2/Bfb4veWeCIXvtC6peErycPc6V2Z4Td1qxmNsDuyDvVk3pkw0iAB6bXErpwwFsJIwffZeLKrRmpgfG6qGnlw2URN+k7FUhPRanhLsGzR09QmhFyJEuX/eU2qnogDcy9/SmrkFEApLE9SeNObyHUwLJsaEmK84l8GP1EXFpraSfb6wQBc8zGxTbPkXQazYAEqJrODNhcrl3nqqWVA31HeJzQCl2wBRpz/2ifHzuCvYOr8jxKAHPDeH79LO0yazPcUk/jPmvPM/IpM5qCpjgfkUyqXh9nTKDacPPQvr7AbNM6y8NY0Xzy4ty7ap/+UEK2W0suqbmWY6EPsJqsai0DqJ5NUjfNhyxnKpD8CgGyRf6Fxc+0KfCaKhbHrS1gNNxHfxMgcwRnbZW1x6RSK6DQxB9zmfrgXg8IhuTFtfPGLpzRz9UbvGD7+z7VZQd75kEqU67YCYMGqBSJgL71bisPJCluQtsRlp0KDY8xHpgKf6VJqM6oN+dD9NrLAvQlxRkx6h7jQAhjDD08KZywhisW3pyHv3IzSHYIqA3n73Pd5+L8PkUfzZgMFJ+D94i6wN6VYNJqfArjbgBZnu08=
-  file: "/Users/travis/build/Prog-grammers/simon-says/build/ios/iphoneos/Runner.app"
+  file: "/Users/travis/build/Prog-grammers/simon-says/build.zip"
   on:
     repo: Prog-grammers/simon-says
   skip_cleanup: 'true'
