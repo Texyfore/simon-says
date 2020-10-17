@@ -48,7 +48,6 @@ class GameController {
     _ButtonPreset(Color(0xFF581010), "F#5"),
     _ButtonPreset(Color(0xFF567922), "F5"),
     _ButtonPreset(Color(0xFF253940), "E5"),
-
   ];
 
   List<ButtonState> generateButtonStates() {
@@ -58,6 +57,7 @@ class GameController {
       var preset = buttonPresets[i];
       var state = ButtonState(
         color: preset.color,
+        sound: preset.sound,
         incomingEvents: stream.stream,
       );
       states.add(state);

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:simon_says/bloc/buttonState.dart';
+import 'package:simon_says/widgets/ControlledSplash.dart';
 
 class GameButton extends StatefulWidget {
   GameButton({Key key, this.buttonState, this.tilesInRow, this.tilesCount})
@@ -19,14 +20,8 @@ class _GameButtonState extends State<GameButton> {
   void initState() {
     super.initState();
     _subscription = widget.buttonState.incomingEvents.listen((event) {
-      setState(() {
-        this.flash = true;
-        Timer(Duration(milliseconds: 500), () {
-          setState(() {
-            this.flash = false;
-          });
-        });
-      });
+      key.currentState.splash();
+      widget.buttonState.playSound();
     });
   }
 
@@ -35,8 +30,11 @@ class _GameButtonState extends State<GameButton> {
   @override
   void dispose() {
     _subscription.cancel();
+    widget.buttonState.dispose();
     super.dispose();
   }
+
+  final key = new GlobalKey<ControlledSplashState>();
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +44,7 @@ class _GameButtonState extends State<GameButton> {
     var nOfTilesInRow = widget.tilesInRow;
     var nOfButtons = widget.tilesCount;
     // egy csempe magassága és szélessége
+    //TODO: Interaktív megoldás
     var tileSize = (nOfButtons == 7 || nOfButtons == 8)
         ? (MediaQuery.of(context).size.width / nOfTilesInRow) -
             (6 * nOfTilesInRow * paddingSize)
@@ -60,17 +59,21 @@ class _GameButtonState extends State<GameButton> {
         child: Stack(
           children: [
             SizedBox.expand(
-              child: ElevatedButton(
-                style:
-                    ElevatedButton.styleFrom(primary: widget.buttonState.color),
-                onPressed: () {},
-                //child: Text('Hello'),
-              ),
-            ),
-            Container(
-              color: this.flash
-                  ? Color.fromARGB(128, 128, 128, 128)
-                  : Colors.transparent,
+              child: GestureDetector(
+                  onTap: () {
+                    key.currentState.splash();
+                  },
+                  child: Stack(
+                    children: [
+                      Container(color: widget.buttonState.color),
+                      Material(
+                        color: Colors.transparent,
+                        child: ControlledSplash(
+                            key: key,
+                            child: Container(color: Colors.transparent)),
+                      ),
+                    ],
+                  )),
             ),
           ],
         ),
