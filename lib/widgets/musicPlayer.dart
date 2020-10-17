@@ -16,13 +16,14 @@ class MusicPlayer extends StatefulWidget {
 
 //TODO: React to Music setting
 class _MusicPlayerState extends State<MusicPlayer>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, WidgetsBindingObserver {
   Future<AudioPlayer> player;
 
   AnimationController _volumeController;
   @override
   void initState() {
     super.initState();
+
     _volumeController = AnimationController(
         lowerBound: 0.0,
         upperBound: 1.0,
@@ -31,7 +32,10 @@ class _MusicPlayerState extends State<MusicPlayer>
         value: 1.0,
         duration: Duration(milliseconds: 200));
     _volumeController.addListener(this._onVolumeAnimation);
+
     _loadAudio();
+
+    WidgetsBinding.instance.addObserver(this);
   }
 
   void _onVolumeAnimation() async {
@@ -66,10 +70,21 @@ class _MusicPlayerState extends State<MusicPlayer>
   }
 
   @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    if (state == AppLifecycleState.paused) {
+      _pauseAudio();
+    } else if (state == AppLifecycleState.resumed) {
+      _playAudio();
+    }
+  }
+
+  @override
   void dispose() {
     disposePlayer();
     _volumeController.view.removeListener(this._onVolumeAnimation);
     _volumeController.dispose();
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
