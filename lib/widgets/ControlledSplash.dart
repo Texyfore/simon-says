@@ -22,7 +22,7 @@ class ControlledSplashState extends State<ControlledSplash> {
     super.dispose();
   }
 
-  void splash() {
+  void splash(Color color) {
     print("splash");
     var renderBox = context.findRenderObject() as RenderBox;
 
@@ -38,7 +38,7 @@ class ControlledSplashState extends State<ControlledSplash> {
         controller: inkController,
         referenceBox: renderBox,
         textDirection: TextDirection.ltr,
-        color: Color.fromARGB(128, 255, 255, 255),
+        color: color,
         onRemoved: onRemoved,
         position: renderBox.paintBounds.center,
         containedInkWell: false);

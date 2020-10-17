@@ -31,7 +31,7 @@ class GameController {
     var i = 0;
     _timer = Timer.periodic(speedToDuration(this.speed), (timer) {
       if (i < correctString.length) {
-        correctString[i].streamController.add(ButtonEvent(flash: true));
+        correctString[i].streamController.add(ButtonEvent(flashCPU: true));
         i++;
       } else {
         //Ha nincs több gomb, akkor hagyja abba a lejátszást
@@ -113,7 +113,7 @@ class GameController {
       //Ezt a dispose metódusban elhalasszuk
       // ignore: cancel_subscriptions
       var subscription = state.onClickStream.listen((event) {
-        stream.add(ButtonEvent(flash: true));
+        stream.add(ButtonEvent(flashPlayer: true));
         input(controllable);
       });
       controllable = _ControllableButton(state, stream, subscription);

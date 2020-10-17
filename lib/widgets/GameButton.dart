@@ -20,8 +20,15 @@ class _GameButtonState extends State<GameButton> {
   void initState() {
     super.initState();
     _subscription = widget.buttonState.incomingEvents.listen((event) {
-      key.currentState.splash();
-      widget.buttonState.playSound();
+      if (event.flashCPU == true) {
+        key.currentState.splash(Color.fromARGB(128, 0, 0, 0));
+      }
+      if (event.flashPlayer == true) {
+        key.currentState.splash(Color.fromARGB(128, 255, 255, 255));
+      }
+      if (event.flashCPU == true || event.flashPlayer == true) {
+        widget.buttonState.playSound();
+      }
     });
   }
 
