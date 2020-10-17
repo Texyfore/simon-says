@@ -21,8 +21,19 @@ class GameController {
   GameController({this.buttonCount = 4, this.speed = Speed.NORMAL});
   List<_ControllableButton> correctString = List();
   List<_ControllableButton> currentString = List();
+
+  ValueNotifier<bool> isPlayingNotifier = ValueNotifier(false);
+  bool get isPlaying {
+    return isPlayingNotifier.value;
+  }
+
+  set isPlaying(bool value) {
+    isPlayingNotifier.value = value;
+  }
+
   void nextRound() {
     print("Next round");
+    isPlaying = true;
     //Új gomb hozzáadása a kombinációhoz
     var index = random.nextInt(buttons.length);
     var button = buttons[index];
@@ -38,6 +49,7 @@ class GameController {
         //Ha nincs több gomb, akkor hagyja abba a lejátszást
         _timer.cancel();
         print("Timer over");
+        isPlaying = false;
       }
     });
   }
@@ -45,7 +57,8 @@ class GameController {
   void input(_ControllableButton button) {
     //Ha éppen a kombináció játszódik le, akkor tiltsa le a bemeneted
     //TODO: Gomb állapotának átállítása
-    if (_timer != null && _timer.isActive) {
+
+    if (isPlaying) {
       return;
     }
     //Ha a következő gomb megegyezik a lenyomott gombbal
@@ -116,7 +129,9 @@ class GameController {
       //Ezt a dispose metódusban elhalasszuk
       // ignore: cancel_subscriptions
       var subscription = state.onClickStream.listen((event) {
-        stream.add(ButtonEvent(flashPlayer: true));
+        if (!isPlaying) {
+          stream.add(ButtonEvent(flashPlayer: true));
+        }
         input(controllable);
       });
       controllable = _ControllableButton(state, stream, subscription);

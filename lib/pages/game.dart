@@ -99,29 +99,38 @@ class _GameScreenState extends State<GameScreen> {
         onBack();
         return true;
       },
-      child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 70.0,
-          backgroundColor: backgroundColor,
-          elevation: 0,
-          leading: IconButton(
-            onPressed: onBack,
-            icon: Icon(
-              Icons.pause_rounded,
-              size: 30.0,
-            ),
-            splashRadius: 25.0,
-          ),
-        ),
-        backgroundColor: backgroundColor,
-        body: Column(
-            key: _columnKey,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: rows),
-      ),
+      child: ValueListenableBuilder(
+          valueListenable: gameController.isPlayingNotifier,
+          builder: (context, isPlaying, _) {
+            return AnimatedContainer(
+              duration: Duration(milliseconds: 250),
+              color: isPlaying ? backgroundColorAlt : backgroundColor,
+              child: Scaffold(
+                appBar: AppBar(
+                  toolbarHeight: 70.0,
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  leading: IconButton(
+                    onPressed: onBack,
+                    icon: Icon(
+                      Icons.pause_rounded,
+                      size: 30.0,
+                    ),
+                    splashRadius: 25.0,
+                  ),
+                ),
+                backgroundColor: Colors.transparent,
+                body: Column(
+                    key: _columnKey,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: rows),
+              ),
+            );
+          }),
     );
   }
 }
 
 final Color backgroundColor = Color(0xFF3F3F3F);
+final Color backgroundColorAlt = Color(0xFF161616);
 final Color letterColor = Color(0xFFFEFEFD);

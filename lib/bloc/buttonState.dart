@@ -31,5 +31,6 @@ class ButtonState {
 class ButtonEvent {
   bool flashCPU;
   bool flashPlayer;
-  ButtonEvent({this.flashCPU, this.flashPlayer});
+  bool isEnabled;
+  ButtonEvent({this.flashCPU, this.flashPlayer, this.isEnabled});
 }
