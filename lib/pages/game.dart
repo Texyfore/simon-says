@@ -6,6 +6,7 @@ import 'package:simon_says/bloc/gameController.dart';
 import 'package:simon_says/bloc/speedCubit.dart';
 import 'package:simon_says/bloc/tilesCubit.dart';
 import 'package:simon_says/widgets/GameButton.dart';
+import 'package:simon_says/widgets/GameOverWidget.dart';
 import 'package:simon_says/widgets/PauseMenuWidget.dart';
 
 class GameScreen extends StatefulWidget {
@@ -50,12 +51,20 @@ class _GameScreenState extends State<GameScreen> {
   GameController gameController;
   List<ButtonState> buttons;
 
+  void onGameOver() {
+    showDialog(
+        context: context,
+        builder: (context) => GameOverWidget(),
+        barrierDismissible: false);
+  }
+
   @override
   void initState() {
     super.initState();
     var buttonCount = context.bloc<TilesCubit>().state;
     var speed = context.bloc<SpeedCubit>().state;
     gameController = GameController(buttonCount: buttonCount, speed: speed);
+    gameController.onGameOver = onGameOver;
     buttons = gameController.generateButtonStates();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {

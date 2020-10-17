@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class PauseMenuWidget extends StatelessWidget {
+class GameOverWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -25,11 +25,14 @@ class PauseMenuWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 30.0,),
+              SizedBox(
+                height: 30.0,
+              ),
               // Játék újra
               ElevatedButton(
                 onPressed: () {
-                  // TODO: implement 'play again' button behaviour
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                      "/game", ModalRoute.withName('/home'));
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -59,10 +62,12 @@ class PauseMenuWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50.0)),
                 ),
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(
+                height: 20.0,
+              ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.popUntil(context,  ModalRoute.withName('/home'));
+                  Navigator.popUntil(context, ModalRoute.withName('/home'));
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

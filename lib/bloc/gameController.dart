@@ -17,6 +17,7 @@ class GameController {
   List<_ControllableButton> buttons = List<_ControllableButton>();
   Timer _timer;
   Random random = Random();
+  void Function() onGameOver;
   GameController({this.buttonCount = 4, this.speed = Speed.NORMAL});
   List<_ControllableButton> correctString = List();
   List<_ControllableButton> currentString = List();
@@ -61,8 +62,10 @@ class GameController {
       }
     } else {
       //Incorrect choice. Game Over
-      //TODO: Game over
       print("Game over");
+      if (onGameOver != null) {
+        onGameOver();
+      }
     }
   }
 
