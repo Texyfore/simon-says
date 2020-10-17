@@ -29,9 +29,11 @@ class _GameScreenState extends State<GameScreen> {
     var i = 0;
     for (var j = 0; j < buttonCount; j++) {
       currentRow.add(GameButton(
-          buttonState: buttons[j],
-          tilesInRow: rowCount,
-          tilesCount: buttonCount));
+        buttonState: buttons[j],
+        tilesInRow: rowCount,
+        tilesCount: buttonCount,
+        viewportSize: _columnSize,
+      ));
       i++;
       if (i >= rowCount) {
         i = 0;
@@ -55,7 +57,13 @@ class _GameScreenState extends State<GameScreen> {
     var speed = context.bloc<SpeedCubit>().state;
     gameController = GameController(buttonCount: buttonCount, speed: speed);
     buttons = gameController.generateButtonStates();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _columnSize.value = _columnKey.currentContext.size;
+    });
   }
+
+  final ValueNotifier<Size> _columnSize = ValueNotifier(null);
 
   @override
   void dispose() {
@@ -69,6 +77,8 @@ class _GameScreenState extends State<GameScreen> {
       builder: (context) => PauseMenuWidget(),
     );
   }
+
+  final GlobalKey _columnKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -95,8 +105,10 @@ class _GameScreenState extends State<GameScreen> {
           ),
         ),
         backgroundColor: backgroundColor,
-        body:
-            Column(mainAxisAlignment: MainAxisAlignment.center, children: rows),
+        body: Column(
+            key: _columnKey,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: rows),
       ),
     );
   }
