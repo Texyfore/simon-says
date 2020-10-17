@@ -25,7 +25,41 @@ class PauseMenuWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 40.0,),
+              SizedBox(height: 30.0,),
+              // Játék újra
+              ElevatedButton(
+                onPressed: () {
+                  // TODO: implement 'play again' button behaviour
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.replay_rounded,
+                      color: letterColor,
+                      size: 28.0,
+                    ),
+                    SizedBox(
+                      width: 10.0,
+                    ),
+                    Text(
+                      'Új játék',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 20.0,
+                        color: letterColor,
+                      ),
+                    ),
+                  ],
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: backgroundColor,
+                  minimumSize: Size(double.infinity, 60),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50.0)),
+                ),
+              ),
+              SizedBox(height: 20.0,),
               ElevatedButton(
                 onPressed: () {
                   Navigator.popUntil(context,  ModalRoute.withName('/home'));
