@@ -26,3 +26,4 @@ deploy:
   on:
     repo: Prog-grammers/simon-says
   skip_cleanup: 'true'
+  draft: true
