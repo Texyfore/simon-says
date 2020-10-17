@@ -16,9 +16,7 @@ class GameController {
   Timer _timer;
   Random random = Random();
   //TODO: Get game speed
-  GameController({this.buttonCount}) {
-    var _rand = Random();
-  }
+  GameController({this.buttonCount});
   List<_ControllableButton> correctString = List();
   List<_ControllableButton> currentString = List();
   void nextRound() {
@@ -90,6 +88,8 @@ class GameController {
   List<ButtonState> generateButtonStates() {
     var states = List<ButtonState>();
     for (var i = 0; i < this.buttonCount; i++) {
+      //Ezt a stream-et a dispose metódusban bezárjuk
+      // ignore: close_sinks
       var stream = StreamController<ButtonEvent>();
       var preset = buttonPresets[i];
       var state = ButtonState(
@@ -101,6 +101,8 @@ class GameController {
 
       _ControllableButton controllable;
       //Feliratkozás a gomb onClick eventjére
+      //Ezt a dispose metódusban elhalasszuk
+      // ignore: cancel_subscriptions
       var subscription = state.onClickStream.listen((event) {
         stream.add(ButtonEvent(flash: true));
         input(controllable);

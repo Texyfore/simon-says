@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:simon_says/widgets/settings/boolCubit.dart';
 
 class MusicCubit extends BoolCubit {

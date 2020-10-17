@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simon_says/bloc/volumeCubit.dart';
 
 class MusicPlayer extends StatefulWidget {
-  Widget child;
+  final Widget child;
 
   MusicPlayer({Key key, @required this.child}) : super(key: key);
 
@@ -67,7 +67,6 @@ class _MusicPlayerState extends State<MusicPlayer>
 
   @override
   void dispose() {
-    //TODO: Sound disposal
     disposePlayer();
     _volumeController.view.removeListener(this._onVolumeAnimation);
     _volumeController.dispose();

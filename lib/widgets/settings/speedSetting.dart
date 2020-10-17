@@ -63,7 +63,7 @@ class SpeedSetting extends StatelessWidget {
                   child:
                       BlocBuilder<SpeedCubit, Speed>(builder: (context, speed) {
                     return Text(
-                      '${speed_to_string(speed)}',
+                      '${speedToString(speed)}',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Poppins',

@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -65,7 +64,7 @@ class _GameLoadState extends State<GameLoad> {
                 return BlocBuilder<SpeedCubit, Speed>(
                     builder: (context, speed) {
                   return Text(
-                    'Csempék: $tiles\nSebesség: ${speed_to_string(speed)}',
+                    'Csempék: $tiles\nSebesség: ${speedToString(speed)}',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Poppins',

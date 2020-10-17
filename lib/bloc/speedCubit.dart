@@ -16,7 +16,7 @@ class SpeedCubit extends Cubit<Speed> {
 
 enum Speed { SLOW, NORMAL, FAST, VERY_FAST }
 
-String speed_to_string(Speed speed) {
+String speedToString(Speed speed) {
   switch (speed) {
     case Speed.SLOW:
       return "Lassú";
@@ -31,4 +31,5 @@ String speed_to_string(Speed speed) {
       return "Nagyon gyors";
       break;
   }
+  return "Ismeretlen";
 }

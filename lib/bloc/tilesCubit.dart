@@ -5,7 +5,7 @@ class TilesCubit extends NumberCubit {
   static const int MAX = 24;
   static const int MIN = 4;
 
-  _emit_checked(int val) {
+  _emitChecked(int val) {
     if (val > MAX) {
       emit(MAX);
       return;
@@ -18,7 +18,7 @@ class TilesCubit extends NumberCubit {
   }
 
   @override
-  void increase() => _emit_checked(state + 1);
+  void increase() => _emitChecked(state + 1);
   @override
-  void decrease() => _emit_checked(state - 1);
+  void decrease() => _emitChecked(state - 1);
 }

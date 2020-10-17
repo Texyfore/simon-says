@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +7,6 @@ class Stats extends StatefulWidget {
 }
 
 class _StatsState extends State<Stats> {
-
   final Color backgroundColor = Color(0xFF3F3F3F);
   final Color letterColor = Color(0xFFFEFEFD);
 
