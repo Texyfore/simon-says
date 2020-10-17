@@ -2,6 +2,7 @@ import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simon_says/bloc/musicCubit.dart';
 import 'package:simon_says/bloc/volumeCubit.dart';
 
 class MusicPlayer extends StatefulWidget {
@@ -34,7 +35,6 @@ class _MusicPlayerState extends State<MusicPlayer>
   }
 
   void _onVolumeAnimation() async {
-    print('VOLUME CHANGE! ${_volumeController.value}');
     var _player = await player;
     await _player.setVolume(_volumeController.value);
   }
@@ -77,10 +77,17 @@ class _MusicPlayerState extends State<MusicPlayer>
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<VolumeCubit, double>(
-        listener: (BuildContext context, volume) {
-          animateVolume(volume);
-        },
-        child: this.widget.child);
+    return BlocListener<MusicCubit, bool>(
+      listener: (context, state) {
+        animateVolume(0);
+      },
+      child: BlocListener<VolumeCubit, double>(
+          listener: (BuildContext context, volume) {
+            var music = BlocProvider.of<MusicCubit>(context).state;
+            var target = music ? volume : 0.0;
+            animateVolume(target);
+          },
+          child: this.widget.child),
+    );
   }
 }
