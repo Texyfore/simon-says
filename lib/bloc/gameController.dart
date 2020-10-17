@@ -14,13 +14,50 @@ class GameController {
   int buttonCount;
   List<_ControllableButton> buttons = List<_ControllableButton>();
   Timer _timer;
+  Random random = Random();
+  //TODO: Get game speed
   GameController({this.buttonCount}) {
     var _rand = Random();
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
-      var index = _rand.nextInt(buttons.length);
-      var button = buttons[index];
-      button.streamController.add(ButtonEvent(flash: true));
+  }
+  List<_ControllableButton> correctString = List();
+  List<_ControllableButton> currentString = List();
+  void nextRound() {
+    print("Next round");
+    var index = random.nextInt(buttons.length);
+    var button = buttons[index];
+    correctString.add(button);
+    currentString = List.from(correctString);
+    var i = 0;
+    _timer = Timer.periodic(Duration(milliseconds: 500), (timer) {
+      if (i < correctString.length) {
+        correctString[i].streamController.add(ButtonEvent(flash: true));
+        i++;
+      } else {
+        _timer.cancel();
+        print("Timer over");
+      }
     });
+  }
+
+  void input(_ControllableButton button) {
+    if (_timer != null && _timer.isActive) {
+      return;
+    }
+    if (currentString[0] == button) {
+      //Correct choice
+      currentString.removeAt(0);
+      print("Right choice");
+      if (currentString.length == 0) {
+        //Next round
+        Timer(Duration(seconds: 1), () {
+          nextRound();
+        });
+      }
+    } else {
+      //Incorrect choice. Game Over
+      //TODO: Game over
+      print("Game over");
+    }
   }
 
   final List<_ButtonPreset> buttonPresets = [
@@ -62,22 +99,34 @@ class GameController {
       );
       states.add(state);
 
-      var controllable = _ControllableButton(state, stream);
+      _ControllableButton controllable;
+      //Feliratkozás a gomb onClick eventjére
+      var subscription = state.onClickStream.listen((event) {
+        stream.add(ButtonEvent(flash: true));
+        input(controllable);
+      });
+      controllable = _ControllableButton(state, stream, subscription);
       buttons.add(controllable);
     }
+    nextRound();
     return states;
   }
 
   void dispose() {
     for (var button in buttons) {
       button.streamController.close();
+      button.subscription.cancel();
     }
-    _timer.cancel();
+    if (_timer != null) {
+      _timer.cancel();
+    }
   }
 }
 
 class _ControllableButton {
   ButtonState buttonState;
   StreamController<ButtonEvent> streamController;
-  _ControllableButton(this.buttonState, this.streamController);
+  StreamSubscription<dynamic> subscription;
+  _ControllableButton(
+      this.buttonState, this.streamController, this.subscription);
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:simon_says/bloc/musicCubit.dart';
-import 'package:simon_says/bloc/speedCubit.dart';
 import 'package:simon_says/bloc/tilesCubit.dart';
 import 'package:simon_says/widgets/settings/boolSetting.dart';
 import 'package:simon_says/widgets/settings/speedSetting.dart';

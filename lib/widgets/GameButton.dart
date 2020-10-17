@@ -25,8 +25,6 @@ class _GameButtonState extends State<GameButton> {
     });
   }
 
-  bool flash = false;
-
   @override
   void dispose() {
     _subscription.cancel();
@@ -61,18 +59,21 @@ class _GameButtonState extends State<GameButton> {
             SizedBox.expand(
               child: GestureDetector(
                   onTap: () {
-                    key.currentState.splash();
+                    widget.buttonState.onClick();
                   },
-                  child: Stack(
-                    children: [
-                      Container(color: widget.buttonState.color),
-                      Material(
-                        color: Colors.transparent,
-                        child: ControlledSplash(
-                            key: key,
-                            child: Container(color: Colors.transparent)),
-                      ),
-                    ],
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10.0),
+                    child: Stack(
+                      children: [
+                        Container(color: widget.buttonState.color),
+                        Material(
+                          color: Colors.transparent,
+                          child: ControlledSplash(
+                              key: key,
+                              child: Container(color: Colors.transparent)),
+                        ),
+                      ],
+                    ),
                   )),
             ),
           ],

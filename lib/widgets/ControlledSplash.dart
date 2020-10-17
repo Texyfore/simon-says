@@ -12,6 +12,16 @@ class ControlledSplash extends StatefulWidget {
 
 class ControlledSplashState extends State<ControlledSplash> {
   List<InteractiveInkFeature> splashes = List<InteractiveInkFeature>();
+
+  @override
+  void dispose() {
+    var _splashes = List<InteractiveInkFeature>.from(splashes);
+    for (var splash in _splashes) {
+      splash.dispose();
+    }
+    super.dispose();
+  }
+
   void splash() {
     print("splash");
     var renderBox = context.findRenderObject() as RenderBox;
@@ -19,7 +29,9 @@ class ControlledSplashState extends State<ControlledSplash> {
     var inkController = Material.of(context);
     InteractiveInkFeature splash;
     void onRemoved() {
-      if (splash != null) {}
+      if (splash != null && splashes.contains(splash)) {
+        splashes.remove(splash);
+      }
     }
 
     splash = InkRipple(
