@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simon_says/bloc/stats/gameTimeCubit.dart';
+import 'package:simon_says/bloc/stats/gamesPlayedCubit.dart';
+import 'package:simon_says/bloc/stats/longestStreakCubit.dart';
 
 class Stats extends StatefulWidget {
   @override
@@ -76,15 +80,18 @@ class _StatsState extends State<Stats> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(
-                    'Játszott játékok\n20',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 20.0,
-                      color: letterColor,
-                    ),
-                  ),
+                  BlocBuilder<GamesPlayedCubit, int>(
+                      builder: (context, gamesPlayed) {
+                    return Text(
+                      'Játszott játékok\n$gamesPlayed',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 20.0,
+                        color: letterColor,
+                      ),
+                    );
+                  }),
                   Divider(
                     thickness: 1.5,
                     color: letterColor,
@@ -98,15 +105,18 @@ class _StatsState extends State<Stats> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(
-                    'Leghosszabb sorozat\n20',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 20.0,
-                      color: letterColor,
-                    ),
-                  ),
+                  BlocBuilder<LongestStreakCubit, int>(
+                      builder: (context, longestStreak) {
+                    return Text(
+                      'Leghosszabb sorozat\n$longestStreak',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 20.0,
+                        color: letterColor,
+                      ),
+                    );
+                  }),
                   Divider(
                     thickness: 1.5,
                     color: letterColor,
@@ -120,15 +130,18 @@ class _StatsState extends State<Stats> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(
-                    'Játszott idő\n10:10:10',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 20.0,
-                      color: letterColor,
-                    ),
-                  ),
+                  BlocBuilder<GameTimeCubit, Duration>(
+                      builder: (context, gametime) {
+                    return Text(
+                      'Játszott idő\n${gametime.toString().split(".")[0]}',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 20.0,
+                        color: letterColor,
+                      ),
+                    );
+                  }),
                   Divider(
                     thickness: 1.5,
                     color: letterColor,

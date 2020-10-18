@@ -4,6 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simon_says/bloc/buttonState.dart';
 import 'package:simon_says/bloc/gameController.dart';
 import 'package:simon_says/bloc/speedCubit.dart';
+import 'package:simon_says/bloc/stats/gameTimeCubit.dart';
+import 'package:simon_says/bloc/stats/gamesPlayedCubit.dart';
+import 'package:simon_says/bloc/stats/longestStreakCubit.dart';
 import 'package:simon_says/bloc/tilesCubit.dart';
 import 'package:simon_says/widgets/GameButton.dart';
 import 'package:simon_says/widgets/GameOverWidget.dart';
@@ -58,14 +61,32 @@ class _GameScreenState extends State<GameScreen> {
         barrierDismissible: false);
   }
 
+  GameTimeCubit gameTimeCubit;
+  LongestStreakCubit longestStreakCubit;
+
+  void onGameEnd(Duration gametime, int streak) {
+    gameTimeCubit.add(gametime);
+    longestStreakCubit.report(streak);
+  }
+
+  void onGameStart() {
+    context.bloc<GamesPlayedCubit>().increase();
+  }
+
   @override
   void initState() {
     super.initState();
+
+    gameTimeCubit = context.bloc<GameTimeCubit>();
+    longestStreakCubit = context.bloc<LongestStreakCubit>();
+
     var buttonCount = context.bloc<TilesCubit>().state;
     var speed = context.bloc<SpeedCubit>().state;
     gameController = GameController(buttonCount: buttonCount, speed: speed);
     gameController.onGameOver = onGameOver;
-    buttons = gameController.generateButtonStates();
+    gameController.onGameEnd = onGameEnd;
+    gameController.onGameStart = onGameStart;
+    buttons = gameController.startGame();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _columnSize.value = _columnKey.currentContext.size;

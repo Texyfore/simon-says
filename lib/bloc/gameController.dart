@@ -68,6 +68,8 @@ class GameController {
       print("Right choice");
       //Ha nem kell több gombot ellenőrizni
       if (currentString.length == 0) {
+        streak = correctString.length;
+        print('$streak');
         //Next round
         Timer(Duration(seconds: 1), () {
           nextRound();
@@ -77,6 +79,7 @@ class GameController {
       //Incorrect choice. Game Over
       print("Game over");
       if (onGameOver != null) {
+        _gameEnded();
         onGameOver();
       }
     }
@@ -109,7 +112,24 @@ class GameController {
     _ButtonPreset(Color(0xFF253940), "E5"),
   ];
 
-  List<ButtonState> generateButtonStates() {
+  void Function() onGameStart;
+  void Function(Duration gametime, int streak) onGameEnd;
+
+  int streak = 0;
+
+  bool hasEnded = false;
+  void _gameEnded() {
+    gametimer.stop();
+    if (!hasEnded) {
+      if (onGameEnd != null) {
+        onGameEnd(gametimer.elapsed, streak);
+      }
+    }
+  }
+
+  Stopwatch gametimer = Stopwatch();
+
+  List<ButtonState> startGame() {
     var states = List<ButtonState>();
     //Gombok létrehozása
     for (var i = 0; i < this.buttonCount; i++) {
@@ -138,10 +158,15 @@ class GameController {
       buttons.add(controllable);
     }
     nextRound();
+    if (onGameStart != null) {
+      onGameStart();
+    }
+    gametimer.start();
     return states;
   }
 
   void dispose() {
+    _gameEnded();
     for (var button in buttons) {
       button.streamController.close();
       button.subscription.cancel();
