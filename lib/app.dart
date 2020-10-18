@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:simon_says/bloc/musicCubit.dart';
 import 'package:simon_says/bloc/stats/gamesPlayedCubit.dart';
 import 'package:simon_says/bloc/stats/longestStreakCubit.dart';
@@ -23,32 +24,41 @@ class AppWidget extends StatelessWidget {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
-    return MultiBlocProvider(
-      providers: [
-        //Settings
-        BlocProvider(create: (_) => TilesCubit()),
-        BlocProvider(create: (_) => SpeedCubit()),
-        BlocProvider(create: (_) => MusicCubit()),
-        //Music volume
-        BlocProvider(create: (_) => VolumeCubit()),
-        //Stats
-        BlocProvider(create: (_) => GamesPlayedCubit()),
-        BlocProvider(create: (_) => GameTimeCubit()),
-        BlocProvider(create: (_) => LongestStreakCubit()),
-      ],
-      child: MusicPlayer(
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          initialRoute: '/home',
-          routes: {
-            '/home': (context) => Home(),
-            '/stats': (context) => Stats(),
-            '/settings': (context) => Settings(),
-            '/gameLoad': (context) => GameLoad(),
-            '/game': (context) => GameScreen(),
-          },
-        ),
-      ),
-    );
+    Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+    return FutureBuilder<SharedPreferences>(
+        future: _prefs,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState != ConnectionState.done) {
+            return Material();
+          }
+          var prefs = snapshot.data;
+          return MultiBlocProvider(
+            providers: [
+              //Settings
+              BlocProvider(create: (_) => TilesCubit(prefs)),
+              BlocProvider(create: (_) => SpeedCubit(prefs)),
+              BlocProvider(create: (_) => MusicCubit(prefs)),
+              //Stats
+              BlocProvider(create: (_) => GamesPlayedCubit(prefs)),
+              BlocProvider(create: (_) => GameTimeCubit(prefs)),
+              BlocProvider(create: (_) => LongestStreakCubit(prefs)),
+              //Music volume
+              BlocProvider(create: (_) => VolumeCubit()),
+            ],
+            child: MusicPlayer(
+              child: MaterialApp(
+                debugShowCheckedModeBanner: false,
+                initialRoute: '/home',
+                routes: {
+                  '/home': (context) => Home(),
+                  '/stats': (context) => Stats(),
+                  '/settings': (context) => Settings(),
+                  '/gameLoad': (context) => GameLoad(),
+                  '/game': (context) => GameScreen(),
+                },
+              ),
+            ),
+          );
+        });
   }
 }

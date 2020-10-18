@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^6.0.6
+  shared_preferences: ^0.5.12+2
   bloc: ^6.0.3
 
   audioplayers: ^0.16.1

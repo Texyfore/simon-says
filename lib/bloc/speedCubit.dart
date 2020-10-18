@@ -1,7 +1,34 @@
 import 'package:bloc/bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SpeedCubit extends Cubit<Speed> {
-  SpeedCubit() : super(Speed.NORMAL);
+  SharedPreferences prefs;
+  Speed get pref {
+    var _pref = prefs.get("speed");
+    if (_pref == null) {
+      return null;
+    }
+    return Speed.values[_pref];
+  }
+
+  set pref(Speed val) {
+    prefs.setInt("speed", val.index);
+  }
+
+  @override
+  void onChange(Change<Speed> change) {
+    pref = change.nextState;
+    super.onChange(change);
+  }
+
+  SpeedCubit(this.prefs)
+      : assert(prefs != null),
+        super(Speed.NORMAL) {
+    var _pref = pref;
+    if (_pref != null) {
+      emit(pref);
+    }
+  }
 
   void _increaseSpeed(int by) {
     var index = state.index;
