@@ -37,13 +37,10 @@ class _StatsState extends State<Stats> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             // Cím
-            Text(
-              'Ciceró\nMondja',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 40.0,
-                color: letterColor,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 60.0),
+              child: Image(
+                image: AssetImage('assets/cicmoicon.png'),
               ),
             ),
             // Cím vonalak között

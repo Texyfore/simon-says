@@ -128,6 +128,17 @@ class _GameScreenState extends State<GameScreen> {
               color: isPlaying ? backgroundColorAlt : backgroundColor,
               child: Scaffold(
                 appBar: AppBar(
+                  centerTitle: true,
+                  // Sorozat hossza
+                  title: Text(
+                    '42',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 22.0,
+                      color: letterColor,
+                    ),
+                  ),
                   toolbarHeight: 70.0,
                   backgroundColor: Colors.transparent,
                   elevation: 0,
