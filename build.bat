@@ -1,0 +1,2 @@
+flutter\bin\flutter build bundle
+flutter\bin\cache\dart-sdk\bin\dart.exe flutter\bin\cache\dart-sdk\bin\snapshots\frontend_server.dart.snapshot --sdk-root flutter\bin\cache\artifacts\engine\common\flutter_patched_sdk_product --target=flutter --aot --tfa -Ddart.vm.product=true --packages .packages --output-dill build\kernel_snapshot.dill --verbose --depfile build\kernel_snapshot.d package:simon_says/main.dart

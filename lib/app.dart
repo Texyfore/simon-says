@@ -17,9 +17,6 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print("Building app");
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-    ]);
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => TilesCubit()),
