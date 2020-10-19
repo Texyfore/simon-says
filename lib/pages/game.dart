@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simon_says/bloc/buttonState.dart';
@@ -54,11 +55,26 @@ class _GameScreenState extends State<GameScreen> {
   GameController gameController;
   List<ButtonState> buttons;
 
+  AudioCache cache = new AudioCache();
+
   void onGameOver() {
     showDialog(
         context: context,
         builder: (context) => GameOverWidget(),
         barrierDismissible: false);
+    () async {
+      var player = await cache.play("sounds/cicero_game_over.mp3");
+      await player.onPlayerCompletion.first;
+      await player.dispose();
+    }();
+  }
+
+  void roundCorrect() {
+    () async {
+      var player = await cache.play("sounds/cicero_pattern_ok.mp3");
+      await player.onPlayerCompletion.first;
+      await player.dispose();
+    }();
   }
 
   GameTimeCubit gameTimeCubit;
@@ -86,6 +102,7 @@ class _GameScreenState extends State<GameScreen> {
     gameController.onGameOver = onGameOver;
     gameController.onGameEnd = onGameEnd;
     gameController.onGameStart = onGameStart;
+    gameController.roundCorrect = roundCorrect;
     buttons = gameController.startGame();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {

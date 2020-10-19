@@ -31,6 +31,8 @@ class GameController {
     isPlayingNotifier.value = value;
   }
 
+  void Function() roundCorrect;
+
   void nextRound() {
     print("Next round");
     isPlaying = true;
@@ -72,6 +74,9 @@ class GameController {
       if (currentString.length == 0) {
         streak = correctString.length;
         print('$streak');
+        if (roundCorrect != null) {
+          roundCorrect();
+        }
         //Next round
         nextRound();
       }
