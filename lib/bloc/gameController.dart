@@ -34,23 +34,25 @@ class GameController {
   void nextRound() {
     print("Next round");
     isPlaying = true;
-    //Új gomb hozzáadása a kombinációhoz
-    var index = random.nextInt(buttons.length);
-    var button = buttons[index];
-    correctString.add(button);
-    currentString = List.from(correctString);
-    //Kombináció lejátszása
-    var i = 0;
-    _timer = Timer.periodic(speedToDuration(this.speed), (timer) {
-      if (i < correctString.length) {
-        correctString[i].streamController.add(ButtonEvent(flashCPU: true));
-        i++;
-      } else {
-        //Ha nincs több gomb, akkor hagyja abba a lejátszást
-        _timer.cancel();
-        print("Timer over");
-        isPlaying = false;
-      }
+    Timer(Duration(seconds: 1), () {
+      //Új gomb hozzáadása a kombinációhoz
+      var index = random.nextInt(buttons.length);
+      var button = buttons[index];
+      correctString.add(button);
+      currentString = List.from(correctString);
+      //Kombináció lejátszása
+      var i = 0;
+      _timer = Timer.periodic(speedToDuration(this.speed), (timer) {
+        if (i < correctString.length) {
+          correctString[i].streamController.add(ButtonEvent(flashCPU: true));
+          i++;
+        } else {
+          //Ha nincs több gomb, akkor hagyja abba a lejátszást
+          _timer.cancel();
+          print("Timer over");
+          isPlaying = false;
+        }
+      });
     });
   }
 
@@ -71,9 +73,7 @@ class GameController {
         streak = correctString.length;
         print('$streak');
         //Next round
-        Timer(Duration(seconds: 1), () {
-          nextRound();
-        });
+        nextRound();
       }
     } else {
       //Incorrect choice. Game Over
@@ -115,7 +115,14 @@ class GameController {
   void Function() onGameStart;
   void Function(Duration gametime, int streak) onGameEnd;
 
-  int streak = 0;
+  ValueNotifier<int> streakNotifier = ValueNotifier(0);
+  int get streak {
+    return streakNotifier.value;
+  }
+
+  set streak(int value) {
+    streakNotifier.value = value;
+  }
 
   bool hasEnded = false;
   void _gameEnded() {

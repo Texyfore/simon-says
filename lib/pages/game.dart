@@ -130,15 +130,19 @@ class _GameScreenState extends State<GameScreen> {
                 appBar: AppBar(
                   centerTitle: true,
                   // Sorozat hossza
-                  title: Text(
-                    '42',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 22.0,
-                      color: letterColor,
-                    ),
-                  ),
+                  title: ValueListenableBuilder(
+                      valueListenable: gameController.streakNotifier,
+                      builder: (context, streak, _) {
+                        return Text(
+                          '$streak',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 22.0,
+                            color: letterColor,
+                          ),
+                        );
+                      }),
                   toolbarHeight: 70.0,
                   backgroundColor: Colors.transparent,
                   elevation: 0,
