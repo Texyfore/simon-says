@@ -45,7 +45,7 @@ class _MusicPlayerState extends State<MusicPlayer>
 
   void _loadAudio() async {
     AudioCache cache = new AudioCache();
-    player = cache.loop("sounds/cicero_loop_128.mp3");
+    player = cache.loop("sounds/cicero_loop_128.ogg");
     //var _player = await player;
     //await _player.pause();
   }
