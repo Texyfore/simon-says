@@ -72,6 +72,12 @@ class AppLocalizations {
       Intl.message("Game over", name: "gameover", locale: localeName);
   String get newgame =>
       Intl.message("New game", name: "newgame", locale: localeName);
+  String get languages =>
+      Intl.message("Languages", name: "languages", locale: localeName);
+  String get language =>
+      Intl.message("Language", name: "language", locale: localeName);
+  String get translatorcredit =>
+      Intl.message("CREDIT HERE", name: "translatorcredit", locale: localeName);
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
