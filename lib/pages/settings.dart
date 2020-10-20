@@ -32,8 +32,14 @@ class Settings extends StatelessWidget {
           // Cím
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 60.0),
-            child: Image(
-              image: AssetImage('assets/cicmoicon.png'),
+            child: Column(
+              children: [
+                SizedBox(height: 30.0,),
+                Image(
+                  image: AssetImage('assets/cicmoicon.png'),
+                ),
+                SizedBox(height: 50.0,)
+              ],
             ),
           ),
           // Cím vonalak között
@@ -60,10 +66,13 @@ class Settings extends StatelessWidget {
               ],
             ),
           ),
-          Divider(
-            thickness: 1.5,
-            color: letterColor,
-            height: 1.5,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 40.0),
+            child: Divider(
+              thickness: 1.5,
+              color: letterColor,
+              height: 1.5,
+            ),
           ),
           Expanded(
             child: ListView(
