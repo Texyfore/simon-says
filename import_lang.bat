@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -File import_lang.ps1

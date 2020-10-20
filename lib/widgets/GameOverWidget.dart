@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:simon_says/language.dart';
 
 class GameOverWidget extends StatefulWidget {
   @override
@@ -22,6 +23,7 @@ class _GameOverWidgetState extends State<GameOverWidget> {
 
   @override
   Widget build(BuildContext context) {
+    var lang = AppLocalizations.of(context);
     return WillPopScope(
       onWillPop: () async {
         Navigator.popUntil(context, ModalRoute.withName('/home'));
@@ -37,7 +39,7 @@ class _GameOverWidgetState extends State<GameOverWidget> {
               children: [
                 // Szünet
                 Text(
-                  'Játék Vége',
+                  lang.gameover,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Poppins',
@@ -71,7 +73,7 @@ class _GameOverWidgetState extends State<GameOverWidget> {
                         width: 10.0,
                       ),
                       Text(
-                        'Új játék',
+                        lang.newgame,
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           fontSize: 20.0,
@@ -109,7 +111,7 @@ class _GameOverWidgetState extends State<GameOverWidget> {
                         width: 10.0,
                       ),
                       Text(
-                        'Kilépés',
+                        lang.quit,
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           fontSize: 20.0,

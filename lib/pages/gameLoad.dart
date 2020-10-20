@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:simon_says/bloc/speedCubit.dart';
 import 'package:simon_says/bloc/tilesCubit.dart';
+import 'package:simon_says/language.dart';
 
 class GameLoad extends StatefulWidget {
   @override
@@ -33,6 +34,7 @@ class _GameLoadState extends State<GameLoad> {
 
   @override
   Widget build(BuildContext context) {
+    var lang = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: backgroundColor,
       body: SizedBox.expand(
@@ -61,7 +63,7 @@ class _GameLoadState extends State<GameLoad> {
                 return BlocBuilder<SpeedCubit, Speed>(
                     builder: (context, speed) {
                   return Text(
-                    'Csempék: $tiles\nSebesség: ${speedToString(speed)}',
+                    '${lang.tiles_num(tiles)}\n${lang.speed_enum(speedToString(lang, speed))}',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Poppins',

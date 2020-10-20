@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:simon_says/bloc/musicCubit.dart';
 import 'package:simon_says/bloc/tilesCubit.dart';
+import 'package:simon_says/language.dart';
 import 'package:simon_says/widgets/settings/boolSetting.dart';
 import 'package:simon_says/widgets/settings/speedSetting.dart';
 import './../widgets/settings/numberSetting.dart';
@@ -9,6 +10,7 @@ import './../widgets/settings/numberSetting.dart';
 class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var lang = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
@@ -54,7 +56,7 @@ class Settings extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 10.0),
                   child: Text(
-                    'Beállítások',
+                    lang.settings,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Poppins',
@@ -78,13 +80,13 @@ class Settings extends StatelessWidget {
             child: ListView(
               children: [
                 NumberSetting<TilesCubit>(
-                  name: "Csempék",
+                  name: lang.tiles,
                 ),
                 // Sebesség beállítása
                 SpeedSetting(
-                  name: "Sebesség",
+                  name: lang.speed,
                 ),
-                BoolSetting<MusicCubit>(name: "Zene"),
+                BoolSetting<MusicCubit>(name: lang.music),
 
                 Padding(
                   padding: EdgeInsets.only(left: 120.0, right: 120.0, bottom: 30.0, top: 0.0),
@@ -104,28 +106,28 @@ class Settings extends StatelessWidget {
                       // Kiválasztó gomb
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, "/");
+                          Navigator.pushNamed(context, "/languageScreen");
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
-                              Icons.gamepad_rounded,
-                              color: letterColor,
-                              size: 28.0,
-                            ),
-                            SizedBox(
-                              width: 10.0,
-                            ),
+                            SizedBox(),
                             Text(
-                              'Játék',
+                              'Magyar',
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 20.0,
                                 color: letterColor,
                               ),
                             ),
-                            SizedBox(),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Icon(
+                              Icons.arrow_forward_rounded,
+                              color: letterColor,
+                              size: 28.0,
+                            ),
                           ],
                         ),
                         style: ElevatedButton.styleFrom(

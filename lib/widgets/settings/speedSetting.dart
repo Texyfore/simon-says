@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simon_says/bloc/speedCubit.dart';
+import 'package:simon_says/language.dart';
 
 final Color backgroundColor = Color(0xFF3F3F3F);
 final Color letterColor = Color(0xFFFEFEFD);
@@ -12,6 +13,7 @@ class SpeedSetting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var lang = AppLocalizations.of(context);
     var cubit = context.bloc<SpeedCubit>();
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -63,7 +65,7 @@ class SpeedSetting extends StatelessWidget {
                   child:
                       BlocBuilder<SpeedCubit, Speed>(builder: (context, speed) {
                     return Text(
-                      '${speedToString(speed)}',
+                      '${speedToString(lang, speed)}',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Poppins',

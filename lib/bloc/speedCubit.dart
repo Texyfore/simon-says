@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:simon_says/language.dart';
 
 class SpeedCubit extends Cubit<Speed> {
   SharedPreferences prefs;
@@ -43,22 +44,22 @@ class SpeedCubit extends Cubit<Speed> {
 
 enum Speed { SLOW, NORMAL, FAST, VERY_FAST }
 
-String speedToString(Speed speed) {
+String speedToString(AppLocalizations lang, Speed speed) {
   switch (speed) {
     case Speed.SLOW:
-      return "Lassú";
+      return lang.slow;
       break;
     case Speed.NORMAL:
-      return "Normál";
+      return lang.normal;
       break;
     case Speed.FAST:
-      return "Gyors";
+      return lang.fast;
       break;
     case Speed.VERY_FAST:
-      return "Nagyon gyors";
+      return lang.veryfast;
       break;
   }
-  return "Ismeretlen";
+  return "Unknown";
 }
 
 Duration speedToDuration(Speed speed) {

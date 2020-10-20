@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:simon_says/bloc/volumeCubit.dart';
+import 'package:simon_says/language.dart';
 import 'package:simon_says/pages/colorchanger.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,6 +18,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var lang = AppLocalizations.of(context);
     var volume = context.bloc<VolumeCubit>();
     return VisibilityDetector(
       key: Key("home-visibility-detector"),
@@ -34,7 +36,9 @@ class Home extends StatelessWidget {
               left: 40,
               bottom: 00,
               child: FloatingActionButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, "/languageScreen");
+                },
                 backgroundColor: darkColor,
                 child: Icon(
                   Icons.language_rounded,
@@ -84,7 +88,7 @@ class Home extends StatelessWidget {
                                 width: 10.0,
                               ),
                               Text(
-                                'Játék',
+                                lang.play,
                                 style: TextStyle(
                                   fontFamily: 'Poppins',
                                   fontSize: 20.0,
@@ -122,7 +126,7 @@ class Home extends StatelessWidget {
                                 width: 10.0,
                               ),
                               Text(
-                                'Statisztikák',
+                                lang.statistics,
                                 style: TextStyle(
                                   fontFamily: 'Poppins',
                                   fontSize: 20.0,
@@ -159,7 +163,7 @@ class Home extends StatelessWidget {
                                 width: 10.0,
                               ),
                               Text(
-                                'Beállítások',
+                                lang.settings,
                                 style: TextStyle(
                                   fontFamily: 'Poppins',
                                   fontSize: 20.0,
@@ -181,7 +185,7 @@ class Home extends StatelessWidget {
 
                   // Csapatnév
                   Text(
-                    'Fejlesztették:\nPro-grammers',
+                    lang.devby("Pro-grammers"),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontFamily: 'Poppins',

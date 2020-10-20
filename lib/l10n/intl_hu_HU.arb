@@ -1,0 +1,120 @@
+{
+    "@@last_modified": "2020-10-20T14:04:57+0000",
+    "play": "Játék",
+    "@play": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "statistics": "Statisztikák",
+    "@statistics": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "settings": "Beállítások",
+    "@settings": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "devby": "Készítették:\n{developer}",
+    "@devby": {
+        "type": "text",
+        "placeholders": {
+            "developer": {
+                "example": "Pro-grammers"
+            }
+        }
+    },
+    "tiles": "Csempék",
+    "@tiles": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "speed": "Gyorsaság",
+    "@speed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "music": "Zene",
+    "@music": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gamesPlayed": "Játékok",
+    "@gamesPlayed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "longestStreak": "Leghosszabb sorozat",
+    "@longestStreak": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameTime": "Játékidő",
+    "@gameTime": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "tiles_num": "Csempék: {tiles}",
+    "@tiles_num": {
+        "type": "text",
+        "placeholders": {
+            "tiles": {
+                "example": "5"
+            }
+        }
+    },
+    "speed_enum": "Gyorsaság: {speed}",
+    "@speed_enum": {
+        "type": "text",
+        "placeholders": {
+            "speed": {
+                "example": "Fast"
+            }
+        }
+    },
+    "slow": "Lassú",
+    "@slow": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "normal": "Normál",
+    "@normal": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "fast": "Gyors",
+    "@fast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "veryfast": "Nagyon gyors",
+    "@veryfast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "paused": "Szünet",
+    "@paused": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "continuegame": "Folytatás",
+    "@continuegame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "quit": "Kilépés",
+    "@quit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameover": "Játék vége",
+    "@gameover": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "newgame": "Új játék",
+    "@newgame": {
+        "type": "text",
+        "placeholders": {}
+    }
+}
