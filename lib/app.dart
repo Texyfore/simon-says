@@ -56,21 +56,23 @@ class AppWidget extends StatelessWidget {
                   GlobalCupertinoLocalizations.delegate,
                 ],
                 supportedLocales: supportedLocales,
-                localeResolutionCallback: (locale, supportedLocales) {
-                  if (supportedLocales.contains(locale)) {
-                    return locale;
-                  }
-                  var alt = supportedLocales
-                      .where((supportedLocale) =>
-                          supportedLocale.languageCode == locale.languageCode)
+                localeListResolutionCallback: (locale, supportedLocales) {
+                  var lang = locale
+                      .where((element) => supportedLocales.contains(element))
                       .first;
-
-                  if (alt == null) {
-                    return alt;
+                  if (lang != null) {
+                    return lang;
                   }
-                  return supportedLocales.firstWhere((element) =>
-                      element.languageCode == "en" &&
-                      element.countryCode == "US");
+                  for (var l in locale) {
+                    lang = supportedLocales
+                        .where(
+                            (element) => element.languageCode == l.languageCode)
+                        .first;
+                    if (lang != null) {
+                      return lang;
+                    }
+                  }
+                  return Locale("en", "US");
                 },
                 debugShowCheckedModeBanner: false,
                 initialRoute: '/home',
