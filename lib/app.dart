@@ -57,17 +57,18 @@ class AppWidget extends StatelessWidget {
                 ],
                 supportedLocales: supportedLocales,
                 localeListResolutionCallback: (locale, supportedLocales) {
-                  var lang = locale
-                      .where((element) => supportedLocales.contains(element))
-                      .first;
+                  var lang = locale.firstWhere(
+                    (element) => supportedLocales.contains(element),
+                    orElse: () => null,
+                  );
                   if (lang != null) {
                     return lang;
                   }
                   for (var l in locale) {
-                    lang = supportedLocales
-                        .where(
-                            (element) => element.languageCode == l.languageCode)
-                        .first;
+                    lang = supportedLocales.firstWhere(
+                      (element) => element.languageCode == l.languageCode,
+                      orElse: () => null,
+                    );
                     if (lang != null) {
                       return lang;
                     }
