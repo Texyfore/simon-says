@@ -85,6 +85,64 @@ class Settings extends StatelessWidget {
                   name: "Sebesség",
                 ),
                 BoolSetting<MusicCubit>(name: "Zene"),
+
+                Padding(
+                  padding: EdgeInsets.only(left: 120.0, right: 120.0, bottom: 30.0, top: 0.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      // Beállítás név
+                      Text(
+                        'Nyelv',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 26.0,
+                          color: letterColor,
+                        ),
+                      ),
+                      // Kiválasztó gomb
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/");
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.gamepad_rounded,
+                              color: letterColor,
+                              size: 28.0,
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Text(
+                              'Játék',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 20.0,
+                                color: letterColor,
+                              ),
+                            ),
+                            SizedBox(),
+                          ],
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          primary: backgroundColor,
+                          elevation: 0.0,
+                          minimumSize: Size(double.infinity, 60),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50.0)),
+                        ),
+                      ),
+                      Divider(
+                        thickness: 1.5,
+                        color: letterColor,
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

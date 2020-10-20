@@ -98,7 +98,7 @@ class SpeedSetting extends StatelessWidget {
           ],
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 80),
+          padding: EdgeInsets.symmetric(horizontal: 120),
           child: Divider(
             thickness: 1.5,
             color: letterColor,

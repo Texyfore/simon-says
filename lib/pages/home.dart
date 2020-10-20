@@ -28,6 +28,22 @@ class Home extends StatelessWidget {
         }
       },
       child: Scaffold(
+        floatingActionButton: Stack(
+          children: [
+            Positioned(
+              left: 40,
+              bottom: 00,
+              child: FloatingActionButton(
+                onPressed: () {},
+                backgroundColor: darkColor,
+                child: Icon(
+                  Icons.language_rounded,
+                  size: 28.0,
+                ),
+              ),
+            ),
+          ],
+        ),
         body: SizedBox.expand(
           child: ColorChanger(
             child: Padding(
