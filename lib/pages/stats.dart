@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simon_says/bloc/stats/gameTimeCubit.dart';
 import 'package:simon_says/bloc/stats/gamesPlayedCubit.dart';
 import 'package:simon_says/bloc/stats/longestStreakCubit.dart';
+import 'package:simon_says/language.dart';
 
 class Stats extends StatefulWidget {
   @override
@@ -16,6 +17,7 @@ class _StatsState extends State<Stats> {
 
   @override
   Widget build(BuildContext context) {
+    var lang = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
@@ -55,7 +57,7 @@ class _StatsState extends State<Stats> {
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 10.0),
                     child: Text(
-                      'Statisztikák',
+                      lang.statistics,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Poppins',
@@ -80,7 +82,7 @@ class _StatsState extends State<Stats> {
                   BlocBuilder<GamesPlayedCubit, int>(
                       builder: (context, gamesPlayed) {
                     return Text(
-                      'Játszott játékok\n$gamesPlayed',
+                      '${lang.gamesPlayed}\n$gamesPlayed',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Poppins',
@@ -105,7 +107,7 @@ class _StatsState extends State<Stats> {
                   BlocBuilder<LongestStreakCubit, int>(
                       builder: (context, longestStreak) {
                     return Text(
-                      'Leghosszabb sorozat\n$longestStreak',
+                      '${lang.longestStreak}\n$longestStreak',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Poppins',
@@ -130,7 +132,7 @@ class _StatsState extends State<Stats> {
                   BlocBuilder<GameTimeCubit, Duration>(
                       builder: (context, gametime) {
                     return Text(
-                      'Játszott idő\n${gametime.toString().split(".")[0]}',
+                      '${lang.gameTime}\n${gametime.toString().split(".")[0]}',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Poppins',

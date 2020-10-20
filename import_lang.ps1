@@ -1,0 +1,1 @@
+flutter pub run intl_translation:generate_from_arb --output-dir=lib/l10n --no-use-deferred-loading lib/language.dart $(Get-ChildItem lib/l10n/intl_*.arb)

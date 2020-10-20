@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:simon_says/bloc/musicCubit.dart';
-import 'package:simon_says/bloc/stats/gamesPlayedCubit.dart';
-import 'package:simon_says/bloc/stats/longestStreakCubit.dart';
-import 'package:simon_says/pages/game.dart';
-import 'package:simon_says/pages/gameLoad.dart';
-import 'package:simon_says/pages/home.dart';
-import 'package:simon_says/pages/settings.dart';
-import 'package:simon_says/pages/stats.dart';
-import 'package:simon_says/widgets/musicPlayer.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:simon_says/language.dart';
 
+import 'bloc/musicCubit.dart';
 import 'bloc/speedCubit.dart';
 import 'bloc/stats/gameTimeCubit.dart';
+import 'bloc/stats/gamesPlayedCubit.dart';
+import 'bloc/stats/longestStreakCubit.dart';
 import 'bloc/tilesCubit.dart';
 import 'bloc/volumeCubit.dart';
+import 'pages/game.dart';
+import 'pages/gameLoad.dart';
+import 'pages/home.dart';
+import 'pages/settings.dart';
+import 'pages/stats.dart';
+import 'widgets/musicPlayer.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -47,6 +49,29 @@ class AppWidget extends StatelessWidget {
             ],
             child: MusicPlayer(
               child: MaterialApp(
+                localizationsDelegates: [
+                  AppLocalizations.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                supportedLocales: supportedLocales,
+                localeResolutionCallback: (locale, supportedLocales) {
+                  if (supportedLocales.contains(locale)) {
+                    return locale;
+                  }
+                  var alt = supportedLocales
+                      .where((supportedLocale) =>
+                          supportedLocale.languageCode == locale.languageCode)
+                      .first;
+
+                  if (alt == null) {
+                    return alt;
+                  }
+                  return supportedLocales.firstWhere((element) =>
+                      element.languageCode == "en" &&
+                      element.countryCode == "US");
+                },
                 debugShowCheckedModeBanner: false,
                 initialRoute: '/home',
                 routes: {

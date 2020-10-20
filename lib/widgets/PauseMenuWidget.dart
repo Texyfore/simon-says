@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:simon_says/language.dart';
 
 class PauseMenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var lang = AppLocalizations.of(context);
     return Material(
       type: MaterialType.transparency,
       child: SizedBox.expand(
@@ -14,7 +16,7 @@ class PauseMenuWidget extends StatelessWidget {
             children: [
               // Szünet
               Text(
-                'Szünet',
+                lang.paused,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Poppins',
@@ -25,7 +27,9 @@ class PauseMenuWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 40.0,),
+              SizedBox(
+                height: 40.0,
+              ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
@@ -42,7 +46,7 @@ class PauseMenuWidget extends StatelessWidget {
                       width: 10.0,
                     ),
                     Text(
-                      'Folytatás',
+                      lang.continuegame,
                       style: TextStyle(
                         fontFamily: 'Poppins',
                         fontSize: 20.0,
@@ -58,10 +62,12 @@ class PauseMenuWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50.0)),
                 ),
               ),
-              SizedBox(height: 30.0,),
+              SizedBox(
+                height: 30.0,
+              ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.popUntil(context,  ModalRoute.withName('/home'));
+                  Navigator.popUntil(context, ModalRoute.withName('/home'));
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -75,7 +81,7 @@ class PauseMenuWidget extends StatelessWidget {
                       width: 10.0,
                     ),
                     Text(
-                      'Kilépés',
+                      lang.quit,
                       style: TextStyle(
                         fontFamily: 'Poppins',
                         fontSize: 20.0,

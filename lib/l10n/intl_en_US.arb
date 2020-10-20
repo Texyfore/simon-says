@@ -1,0 +1,120 @@
+{
+  "@@last_modified": "2020-10-20T16:03:37.153291",
+  "play": "Play",
+  "@play": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "statistics": "Statistics",
+  "@statistics": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "settings": "Settings",
+  "@settings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "devby": "Made by:\n{developer}",
+  "@devby": {
+    "type": "text",
+    "placeholders": {
+      "developer": {
+        "example": "Pro-grammers"
+      }
+    }
+  },
+  "tiles": "Tiles",
+  "@tiles": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "speed": "Speed",
+  "@speed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "music": "Music",
+  "@music": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "gamesPlayed": "Games played",
+  "@gamesPlayed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "longestStreak": "Longest streak",
+  "@longestStreak": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "gameTime": "Game time",
+  "@gameTime": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tiles_num": "Tiles: {tiles}",
+  "@tiles_num": {
+    "type": "text",
+    "placeholders": {
+      "tiles": {
+        "example": "5"
+      }
+    }
+  },
+  "speed_enum": "Speed: {speed}",
+  "@speed_enum": {
+    "type": "text",
+    "placeholders": {
+      "speed": {
+        "example": "Fast"
+      }
+    }
+  },
+  "slow": "Slow",
+  "@slow": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "normal": "Normal",
+  "@normal": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fast": "Fast",
+  "@fast": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "veryfast": "Very fast",
+  "@veryfast": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "paused": "Paused",
+  "@paused": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "continuegame": "Continue",
+  "@continuegame": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "quit": "Quit",
+  "@quit": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "gameover": "Game over",
+  "@gameover": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "newgame": "New game",
+  "@newgame": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
