@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:simon_says/bloc/languageCubit.dart';
 import 'package:simon_says/language.dart';
 import 'package:simon_says/pages/settingsSliver.dart';
 
@@ -44,11 +45,14 @@ class AppWidget extends StatelessWidget {
               BlocProvider(create: (_) => GamesPlayedCubit(prefs)),
               BlocProvider(create: (_) => GameTimeCubit(prefs)),
               BlocProvider(create: (_) => LongestStreakCubit(prefs)),
+              //Language selector
+              BlocProvider(create: (_) => LanguageCubit(-1)),
               //Music volume
               BlocProvider(create: (_) => VolumeCubit()),
             ],
-            child: MusicPlayer(
-              child: MaterialApp(
+            child: MusicPlayer(child: BlocBuilder<LanguageCubit, int>(
+                builder: (context, selectedLanguage) {
+              return MaterialApp(
                 localizationsDelegates: [
                   AppLocalizations.delegate,
                   GlobalMaterialLocalizations.delegate,
@@ -56,6 +60,9 @@ class AppWidget extends StatelessWidget {
                   GlobalCupertinoLocalizations.delegate,
                 ],
                 supportedLocales: supportedLocales,
+                locale: selectedLanguage > 0
+                    ? supportedLanguages[selectedLanguage].locale
+                    : null,
                 localeListResolutionCallback: (locale, supportedLocales) {
                   var lang = locale.firstWhere(
                     (element) => supportedLocales.contains(element),
@@ -84,8 +91,8 @@ class AppWidget extends StatelessWidget {
                   '/gameLoad': (context) => GameLoad(),
                   '/game': (context) => GameScreen(),
                 },
-              ),
-            ),
+              );
+            })),
           );
         });
   }

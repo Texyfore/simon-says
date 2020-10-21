@@ -90,6 +90,10 @@ class AppLocalizations {
   String get translatorcredit =>
       Intl.message("Translated by the Pro-grammers team",
           name: "translatorcredit", locale: localeName);
+  String get defaultlang => Intl.message("System language",
+      name: "defaultlang",
+      locale: localeName,
+      desc: "Language set by the operating system");
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

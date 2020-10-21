@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simon_says/bloc/languageCubit.dart';
 import 'package:simon_says/bloc/musicCubit.dart';
 import 'package:simon_says/bloc/tilesCubit.dart';
 import 'package:simon_says/language.dart';
@@ -19,7 +20,6 @@ class SettingsSliver extends StatelessWidget {
     var lang = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: backgroundColor,
-
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -45,104 +45,88 @@ class SettingsSliver extends StatelessWidget {
           ),
           SettingsSliverHeader(
             title: lang.settings,
-            padding: EdgeInsets.only(right: 40.0, left: 40.0, top: 20.0,),
+            padding: EdgeInsets.only(
+              right: 40.0,
+              left: 40.0,
+              top: 20.0,
+            ),
           ),
           SliverFixedExtentList(
             itemExtent: 170,
-            delegate: SliverChildListDelegate(
-              [
-                NumberSetting<TilesCubit>(
-                  name: lang.tiles,
-                ),
-                // Sebesség beállítása
-                SpeedSetting(
-                  name: lang.speed,
-                ),
-                BoolSetting<MusicCubit>(name: lang.music),
-              ]
-            ),
+            delegate: SliverChildListDelegate([
+              NumberSetting<TilesCubit>(
+                name: lang.tiles,
+              ),
+              // Sebesség beállítása
+              SpeedSetting(
+                name: lang.speed,
+              ),
+              BoolSetting<MusicCubit>(name: lang.music),
+            ]),
           ),
           SettingsSliverHeader(
             title: lang.languages,
-            padding: EdgeInsets.only(right: 40.0, left: 40.0, top: 0.0, bottom: 0.0),
+            padding:
+                EdgeInsets.only(right: 40.0, left: 40.0, top: 0.0, bottom: 0.0),
           ),
-          SliverFixedExtentList(
-            itemExtent: 60,
-            delegate: SliverChildListDelegate(
-                [
-                  LanguageSelectButton(
-                    onPressed: () {},
-                    languageName: 'English',
-                  ),
-                  LanguageSelectButton(
-                    onPressed: () {},
-                    languageName: 'Deutsche',
-                  ),
-                  LanguageSelectButton(
-                    onPressed: () {},
-                    languageName: 'Français',
-                  ),
-                  LanguageSelectButton(
-                    onPressed: () {},
-                    languageName: 'Magyar',
-                  ),
-                  LanguageSelectButton(
-                    onPressed: () {},
-                    languageName: 'Nederlands',
-                  ),
-                  LanguageSelectButton(
-                    onPressed: () {},
-                    languageName: 'Polskie',
-                  ),
-                  LanguageSelectButton(
-                    onPressed: () {},
-                    languageName: 'Türk',
-                  ),
-                  LanguageSelectButton(
-                    onPressed: () {},
-                    languageName: 'Română',
-                  ),
-                  LanguageSelectButton(
-                    onPressed: () {},
-                    languageName: '日本語',
-                  ),
-                  LanguageSelectButton(
-                    onPressed: () {},
-                    languageName: '한국어',
-                  ),
-                ]
-            ),
-          ),
+          BlocBuilder<LanguageCubit, int>(builder: (context, selectedLanguage) {
+            return SliverFixedExtentList(
+              itemExtent: 60,
+              delegate: SliverChildBuilderDelegate((context, index) {
+                var langCubit = context.bloc<LanguageCubit>();
+                String languageName;
+                Function() onClick;
+                if (index == 0) {
+                  languageName = lang.defaultlang;
+                  onClick = () {
+                    langCubit.setDefault();
+                  };
+                } else {
+                  var _index = index - 1;
+                  var language = supportedLanguages[_index];
+                  languageName = language.name;
+                  onClick = () {
+                    print("Changing locale to: ${language.locale}");
+                    langCubit.changeLocale(language.locale);
+                  };
+                }
+                return RadioListTile(
+                  title: Text(languageName),
+                  onChanged: (_) => onClick(),
+                  value: index,
+                  groupValue: selectedLanguage + 1,
+                );
+              }, childCount: supportedLanguages.length + 1),
+            );
+          }),
           SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 10.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Divider(
-                        thickness: 1.5,
+            delegate: SliverChildListDelegate([
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 10.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Divider(
+                      thickness: 1.5,
+                      color: letterColor,
+                    ),
+                    Text(
+                      lang.translatorcredit,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 18.0,
                         color: letterColor,
                       ),
-                      Text(
-                        lang.translatorcredit,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 18.0,
-                          color: letterColor,
-                        ),
-                      ),
-                      Divider(
-                        thickness: 1.5,
-                        color: letterColor,
-                      ),
-                    ],
-                  ),
+                    ),
+                    Divider(
+                      thickness: 1.5,
+                      color: letterColor,
+                    ),
+                  ],
                 ),
-              ]
-            ),
+              ),
+            ]),
           ),
         ],
       ),
