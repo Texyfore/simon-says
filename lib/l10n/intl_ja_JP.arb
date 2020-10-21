@@ -1,0 +1,132 @@
+{
+    "@@last_modified": "2020-10-21T14:20:09+0000",
+    "play": "プレー",
+    "@play": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "statistics": "統計",
+    "@statistics": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "settings": "設定",
+    "@settings": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "devby": "作られた:\n{developer}",
+    "@devby": {
+        "type": "text",
+        "placeholders": {
+            "developer": {
+                "example": "Pro-grammers"
+            }
+        }
+    },
+    "tiles": "タイル数",
+    "@tiles": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "speed": "速度",
+    "@speed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "music": "音楽",
+    "@music": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gamesPlayed": "プレイしたゲーム",
+    "@gamesPlayed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "longestStreak": "最長ストリーク",
+    "@longestStreak": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameTime": "プレイした時間",
+    "@gameTime": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "tiles_num": "タイル: {tiles}",
+    "@tiles_num": {
+        "type": "text",
+        "placeholders": {
+            "tiles": {
+                "example": "5"
+            }
+        }
+    },
+    "speed_enum": "速度: {speed}",
+    "@speed_enum": {
+        "type": "text",
+        "placeholders": {
+            "speed": {
+                "example": "Fast"
+            }
+        }
+    },
+    "slow": "遅い",
+    "@slow": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "normal": "通常",
+    "@normal": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "fast": "速い",
+    "@fast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "veryfast": "極速い",
+    "@veryfast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "paused": "休止",
+    "@paused": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "continuegame": "続ける",
+    "@continuegame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "quit": "終了する",
+    "@quit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameover": "ゲームオーバー",
+    "@gameover": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "newgame": "新ゲーム",
+    "@newgame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "descriptionshort": "古典的なサイモンセズ記憶ゲーム",
+    "description": "CICMOは、モダン外観とカッチー音楽で通常シモンセズゲームを提供します。ゲームの目的は、正解な順序でタイルを押すことです。各ラウンドで、プレイヤーはますます長くなるシーケンスを記憶して、その順序でタイルを押す必要があります。CICMOは、旅行中や暇であれば完璧な娯楽だって、落ち着いた効果の音と目を引くダークテーマがあるから、治療目的にも使用できます。",
+    "translatorcredit": "YertofeXによって日本語に訳されました。",
+    "@translatorcredit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "languages": "",
+    "@languages": {
+        "type": "text",
+        "placeholders": {}
+    }
+}

@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-10-20T16:03:37.153291",
+  "@@last_modified": "2020-10-21T16:45:11.858527",
   "play": "Play",
   "@play": {
     "type": "text",
@@ -114,6 +114,16 @@
   },
   "newgame": "New game",
   "@newgame": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "languages": "Languages",
+  "@languages": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "translatorcredit": "CREDIT HERE",
+  "@translatorcredit": {
     "type": "text",
     "placeholders": {}
   }

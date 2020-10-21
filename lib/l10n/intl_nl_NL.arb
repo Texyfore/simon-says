@@ -1,0 +1,132 @@
+{
+    "@@last_modified": "2020-10-20T17:48:29+0000",
+    "play": "Speel",
+    "@play": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "statistics": "Statistieken",
+    "@statistics": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "settings": "Instellingen",
+    "@settings": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "devby": "Gemaakt door:\n{developer}",
+    "@devby": {
+        "type": "text",
+        "placeholders": {
+            "developer": {
+                "example": "Pro-grammers"
+            }
+        }
+    },
+    "tiles": "Tegels",
+    "@tiles": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "speed": "Snelheid",
+    "@speed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "music": "Muziek",
+    "@music": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gamesPlayed": "Potjes gespeeld",
+    "@gamesPlayed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "longestStreak": "Langste reeks",
+    "@longestStreak": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameTime": "Tijd gespeeld",
+    "@gameTime": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "tiles_num": "Tegels: {tiles}",
+    "@tiles_num": {
+        "type": "text",
+        "placeholders": {
+            "tiles": {
+                "example": "5"
+            }
+        }
+    },
+    "speed_enum": "Snelheid: {speed}",
+    "@speed_enum": {
+        "type": "text",
+        "placeholders": {
+            "speed": {
+                "example": "Fast"
+            }
+        }
+    },
+    "slow": "Langzaam",
+    "@slow": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "normal": "Middelmatig",
+    "@normal": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "fast": "Snel",
+    "@fast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "veryfast": "Zeer Snel",
+    "@veryfast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "paused": "Gepauzeerd",
+    "@paused": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "continuegame": "Doorgaan",
+    "@continuegame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "quit": "Sluiten",
+    "@quit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameover": "Spel voorbij",
+    "@gameover": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "newgame": "Nieuw spel",
+    "@newgame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "descriptionshort": "Het klassieke Simon Says geheugen spel",
+    "description": "CICMO levert de bekende gameplay van Simon Says met een moderne look en pakkende muziek. Het doel van het spel is om de tegels in de juiste volgorde te drukken; in elke ronde moet de speler een steeds langere reeks onthouden en vervolgens in die volgorde op de tegels drukken. CICMO is het perfecte tijdverdrijf als je wat vrije tijd hebt tijdens het reizen of wachten, maar kan ook worden gebruikt voor therapeutische doeleinden met zijn rustgevende en pakkende effecttonen en opvallend donker thema.",
+    "translatorcredit": "",
+    "@translatorcredit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "languages": "",
+    "@languages": {
+        "type": "text",
+        "placeholders": {}
+    }
+}

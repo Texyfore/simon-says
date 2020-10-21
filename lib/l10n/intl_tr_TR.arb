@@ -1,0 +1,132 @@
+{
+    "@@last_modified": "2020-10-20T18:26:23+0000",
+    "play": "Oyna",
+    "@play": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "statistics": "İstatistikler",
+    "@statistics": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "settings": "Ayarlar",
+    "@settings": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "devby": "{developer} tarafından yapıldı.",
+    "@devby": {
+        "type": "text",
+        "placeholders": {
+            "developer": {
+                "example": "Pro-grammers"
+            }
+        }
+    },
+    "tiles": "Kareler",
+    "@tiles": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "speed": "Hız",
+    "@speed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "music": "Müzik",
+    "@music": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gamesPlayed": "Oynanan oyun sayısı",
+    "@gamesPlayed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "longestStreak": "Yanmadan oynanan en çok el sayısı",
+    "@longestStreak": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameTime": "Oyun süresi",
+    "@gameTime": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "tiles_num": "Kareler: {tiles}",
+    "@tiles_num": {
+        "type": "text",
+        "placeholders": {
+            "tiles": {
+                "example": "5"
+            }
+        }
+    },
+    "speed_enum": "Hız: {speed}",
+    "@speed_enum": {
+        "type": "text",
+        "placeholders": {
+            "speed": {
+                "example": "Fast"
+            }
+        }
+    },
+    "slow": "Yavaş",
+    "@slow": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "normal": "Normal",
+    "@normal": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "fast": "Hızlı",
+    "@fast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "veryfast": "Çok Hızlı",
+    "@veryfast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "paused": "Durduruldu",
+    "@paused": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "continuegame": "Devam et",
+    "@continuegame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "quit": "Çık",
+    "@quit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameover": "Oyun Bitti",
+    "@gameover": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "newgame": "Yeni Oyun",
+    "@newgame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "descriptionshort": "Klasik Simon Diyor ki hafıza oyunu",
+    "description": "CICMO sizlere alışık olduğunuz Simon Diyor ki oyunu deneyimini modern,şık görünüşlü ve akılda kalıcı müziklerle sunar.Oyunun ana amacı karelere doğru sırada basmaktır ;her el,oyuncu giderek uzayan bir sırayı hatırlamak ve karelere doğru sırada basmak zorundadır.CICMO seyahat ederken veya beklerken zaman geçirmeniz için idealdir,aynı zamanda yatıştırıcı ve akılda kalıcı efekt tonlarıyla ve göz alıcı karanlık temasıyla terapi amacıyla da kullanılabilir.",
+    "translatorcredit": "Translated to Turkish by Alper Kaya.\nTürkçeye Alper Kaya tarafından çevirilmiştir.",
+    "@translatorcredit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "languages": "",
+    "@languages": {
+        "type": "text",
+        "placeholders": {}
+    }
+}

@@ -4,10 +4,23 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:simon_says/l10n/messages_all.dart';
 
-const supportedLocales = [
-  Locale("en", "US"),
-  Locale("hu", "HU"),
+const supportedLanguages = [
+  LanguageOptions(Locale("en", "US"), "English"),
+  LanguageOptions(Locale("hu", "HU"), "Magyar"),
+  LanguageOptions(Locale("de", "DE"), "Deutsche"),
+  LanguageOptions(Locale("nl", "NL"), "Nederlands"),
+  LanguageOptions(Locale("tr", "TR"), "Türk"),
+  LanguageOptions(Locale("ro", "RO"), "Română"),
+  LanguageOptions(Locale("ja", "JP"), "日本語"),
 ];
+
+var supportedLocales = supportedLanguages.map((e) => e.locale).toList();
+
+class LanguageOptions {
+  final Locale locale;
+  final String name;
+  const LanguageOptions(this.locale, this.name);
+}
 
 class AppLocalizations {
   static AppLocalizationsDelegate delegate = AppLocalizationsDelegate();

@@ -1,0 +1,132 @@
+{
+    "@@last_modified": "2020-10-21T06:04:29+0000",
+    "play": "spielen",
+    "@play": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "statistics": "Statistik",
+    "@statistics": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "settings": "Einstellungen",
+    "@settings": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "devby": "Hergestellt von:\n{developer}",
+    "@devby": {
+        "type": "text",
+        "placeholders": {
+            "developer": {
+                "example": "Pro-grammers"
+            }
+        }
+    },
+    "tiles": "Kacheln",
+    "@tiles": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "speed": "Geschwindigkeit",
+    "@speed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "music": "Musik",
+    "@music": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gamesPlayed": "gespielte Spiele",
+    "@gamesPlayed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "longestStreak": "längstes Streak",
+    "@longestStreak": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameTime": "Spiel Zeit",
+    "@gameTime": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "tiles_num": "Kacheln: {tiles}",
+    "@tiles_num": {
+        "type": "text",
+        "placeholders": {
+            "tiles": {
+                "example": "5"
+            }
+        }
+    },
+    "speed_enum": "Geschwindigkeit: {speed}",
+    "@speed_enum": {
+        "type": "text",
+        "placeholders": {
+            "speed": {
+                "example": "Fast"
+            }
+        }
+    },
+    "slow": "langsam",
+    "@slow": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "normal": "normal",
+    "@normal": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "fast": "schnell",
+    "@fast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "veryfast": "sehr schnell",
+    "@veryfast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "paused": "gepaused",
+    "@paused": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "continuegame": "fortfahren",
+    "@continuegame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "quit": "ausloggen",
+    "@quit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameover": "Spiel ist aus",
+    "@gameover": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "newgame": "neues Spiel",
+    "@newgame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "descriptionshort": "Das klassische Simon Says  Gedächtnnis Spiel",
+    "description": "CICMO bringt das gewöhnliches SImon-says Spiel mit modernem abgeklärtem Aussehen und einprägsamer Musik. Das Ziel des Spieles ist, auf die Kacheln in der richtigen Reihefolge zu klicken. In jeden Runden soll der Spieler an immer längere Reihefolge erinneren. CICMO ist das perfekte Freizeitaktivität, wenn man während Reisen oder Warten nichts machen kann. Außerdem kann es sehr vorteilhaft für therapeutische Ziele sein, weil das Speil über angenehme lockende Effekte und einen reizenden Anblick verfügt.",
+    "translatorcredit": "",
+    "@translatorcredit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "languages": "",
+    "@languages": {
+        "type": "text",
+        "placeholders": {}
+    }
+}

@@ -1,0 +1,132 @@
+{
+    "@@last_modified": "2020-10-20T17:45:21+0000",
+    "play": "Nowa gra",
+    "@play": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "statistics": "Statystyki",
+    "@statistics": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "settings": "Ustawienia",
+    "@settings": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "devby": "Autorzy:\n{developer}",
+    "@devby": {
+        "type": "text",
+        "placeholders": {
+            "developer": {
+                "example": "Pro-grammers"
+            }
+        }
+    },
+    "tiles": "Liczba kafelek",
+    "@tiles": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "speed": "Prędkość",
+    "@speed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "music": "Muzyka",
+    "@music": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gamesPlayed": "Rozegrane gry",
+    "@gamesPlayed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "longestStreak": "Kafelki z rzędu",
+    "@longestStreak": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameTime": "Czas gry",
+    "@gameTime": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "tiles_num": "Liczba kafelek: {tiles}",
+    "@tiles_num": {
+        "type": "text",
+        "placeholders": {
+            "tiles": {
+                "example": "5"
+            }
+        }
+    },
+    "speed_enum": "Prędkość: {speed}",
+    "@speed_enum": {
+        "type": "text",
+        "placeholders": {
+            "speed": {
+                "example": "Fast"
+            }
+        }
+    },
+    "slow": "Wolno",
+    "@slow": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "normal": "Normalnie",
+    "@normal": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "fast": "Szybko",
+    "@fast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "veryfast": "Bardzo szybko",
+    "@veryfast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "paused": "Gra zatrzymana",
+    "@paused": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "continuegame": "Powrót do gry",
+    "@continuegame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "quit": "Wyjście",
+    "@quit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameover": "Koniec gry",
+    "@gameover": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "newgame": "Nowa gra",
+    "@newgame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "descriptionshort": "Klasyczna gra pamięciowa Simon mówi",
+    "description": "",
+    "translatorcredit": "",
+    "@translatorcredit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "languages": "",
+    "@languages": {
+        "type": "text",
+        "placeholders": {}
+    }
+}

@@ -1,0 +1,132 @@
+{
+    "@@last_modified": "2020-10-20T20:08:42+0000",
+    "play": "Joc",
+    "@play": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "statistics": "Statistici",
+    "@statistics": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "settings": "Setări",
+    "@settings": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "devby": "A făcut:\n{developer}",
+    "@devby": {
+        "type": "text",
+        "placeholders": {
+            "developer": {
+                "example": "Pro-grammers"
+            }
+        }
+    },
+    "tiles": "Pătrat",
+    "@tiles": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "speed": "Viteză",
+    "@speed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "music": "Muzică",
+    "@music": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gamesPlayed": "Jocuri",
+    "@gamesPlayed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "longestStreak": "Seria câşstigătoare",
+    "@longestStreak": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameTime": "Timp de joc",
+    "@gameTime": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "tiles_num": "Pătrat: {tiles}",
+    "@tiles_num": {
+        "type": "text",
+        "placeholders": {
+            "tiles": {
+                "example": "5"
+            }
+        }
+    },
+    "speed_enum": "Viteză",
+    "@speed_enum": {
+        "type": "text",
+        "placeholders": {
+            "speed": {
+                "example": "Fast"
+            }
+        }
+    },
+    "slow": "încet",
+    "@slow": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "normal": "Normal",
+    "@normal": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "fast": "Rapid",
+    "@fast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "veryfast": "Foarte rapid",
+    "@veryfast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "paused": "Pauză",
+    "@paused": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "continuegame": "Continuare",
+    "@continuegame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "quit": "Ieşire",
+    "@quit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameover": "Jocul terminat",
+    "@gameover": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "newgame": "Joc nou",
+    "@newgame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "descriptionshort": "Joc clasic memorial",
+    "description": "CICMO este un joc modern cu un aspect curat şi cu muzică atrăgătoare. în joc trebuie să apasăm pătratele în ordinea corectă; în fiecare rundă, jucătorul trebuie să memoreze o secvență din ce în ce mai lungă și apoi să apese pătratele în această ordine. CICMO este o distracție perfectă dacă aveți ceva timp liber. Jocul poate să aibă şi efect terapeutic cu efecte sonore liniștitoare şi cu tema lui frumoasă.",
+    "translatorcredit": "Traducător: Kertész Balázs",
+    "@translatorcredit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "languages": "",
+    "@languages": {
+        "type": "text",
+        "placeholders": {}
+    }
+}

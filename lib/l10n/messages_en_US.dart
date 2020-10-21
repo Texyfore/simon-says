@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "gameTime" : MessageLookupByLibrary.simpleMessage("Game time"),
     "gameover" : MessageLookupByLibrary.simpleMessage("Game over"),
     "gamesPlayed" : MessageLookupByLibrary.simpleMessage("Games played"),
+    "languages" : MessageLookupByLibrary.simpleMessage("Languages"),
     "longestStreak" : MessageLookupByLibrary.simpleMessage("Longest streak"),
     "music" : MessageLookupByLibrary.simpleMessage("Music"),
     "newgame" : MessageLookupByLibrary.simpleMessage("New game"),
@@ -47,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "statistics" : MessageLookupByLibrary.simpleMessage("Statistics"),
     "tiles" : MessageLookupByLibrary.simpleMessage("Tiles"),
     "tiles_num" : m2,
+    "translatorcredit" : MessageLookupByLibrary.simpleMessage("CREDIT HERE"),
     "veryfast" : MessageLookupByLibrary.simpleMessage("Very fast")
   };
 }
