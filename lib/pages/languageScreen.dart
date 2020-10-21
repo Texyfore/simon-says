@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:simon_says/language.dart';
+import 'package:simon_says/widgets/languageSelectButton.dart';
 
 class LanguageScreen extends StatelessWidget {
   @override
@@ -23,7 +24,7 @@ class LanguageScreen extends StatelessWidget {
           splashRadius: 25.0,
         ),
         title: Text(
-          'Nyelvek',
+          'Languages',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Poppins',
@@ -35,7 +36,46 @@ class LanguageScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
-
+          LanguageSelectButton(
+            onPressed: () {},
+            languageName: 'English',
+          ),
+          LanguageSelectButton(
+            onPressed: () {},
+            languageName: 'Deutsche',
+          ),
+          LanguageSelectButton(
+            onPressed: () {},
+            languageName: 'Français',
+          ),
+          LanguageSelectButton(
+            onPressed: () {},
+            languageName: 'Magyar',
+          ),
+          LanguageSelectButton(
+            onPressed: () {},
+            languageName: 'Nederlands',
+          ),
+          LanguageSelectButton(
+            onPressed: () {},
+            languageName: 'Polskie',
+          ),
+          LanguageSelectButton(
+            onPressed: () {},
+            languageName: 'Türk',
+          ),
+          LanguageSelectButton(
+            onPressed: () {},
+            languageName: 'Română',
+          ),
+          LanguageSelectButton(
+            onPressed: () {},
+            languageName: '日本語',
+          ),
+          LanguageSelectButton(
+            onPressed: () {},
+            languageName: '한국어',
+          ),
         ],
       ),
     );
