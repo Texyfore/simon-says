@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:simon_says/language.dart';
-import 'package:simon_says/pages/languageScreen.dart';
 import 'package:simon_says/pages/settingsSliver.dart';
 
 import 'bloc/musicCubit.dart';
@@ -17,7 +16,6 @@ import 'bloc/volumeCubit.dart';
 import 'pages/game.dart';
 import 'pages/gameLoad.dart';
 import 'pages/home.dart';
-import 'pages/settings.dart';
 import 'pages/stats.dart';
 import 'widgets/musicPlayer.dart';
 
@@ -82,11 +80,9 @@ class AppWidget extends StatelessWidget {
                 routes: {
                   '/home': (context) => Home(),
                   '/stats': (context) => Stats(),
-                  //'/settings': (context) => Settings(),
                   '/settings': (context) => SettingsSliver(),
                   '/gameLoad': (context) => GameLoad(),
                   '/game': (context) => GameScreen(),
-                  '/languageScreen': (context) => LanguageScreen(),
                 },
               ),
             ),
