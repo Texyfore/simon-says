@@ -1,5 +1,5 @@
 {
-    "@@last_modified": "2020-10-20T14:04:57+0000",
+    "@@last_modified": "2020-10-21T16:59:02+0000",
     "play": "Játék",
     "@play": {
         "type": "text",
@@ -29,7 +29,7 @@
         "type": "text",
         "placeholders": {}
     },
-    "speed": "Gyorsaság",
+    "speed": "Sebesség",
     "@speed": {
         "type": "text",
         "placeholders": {}
@@ -63,7 +63,7 @@
             }
         }
     },
-    "speed_enum": "Gyorsaság: {speed}",
+    "speed_enum": "Sebesség: {speed}",
     "@speed_enum": {
         "type": "text",
         "placeholders": {
@@ -114,6 +114,24 @@
     },
     "newgame": "Új játék",
     "@newgame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "descriptionshort": "Egy klasszikus Simon-mondja memória játék",
+    "description": "A CICMO modern, letisztult kinézettel és fülbemászó zenével nyújtja a Simon-mondja játékok megszokott játékmenetét. A játék célja a csempék lenyomása a megfelelő sorrendben; minden körben egyel hosszabb sorozatot kell a játékosnak megjegyeznie, majd a csempéket ebben a sorrendben lenyomnia. A CICMO tökéletes időtöltés, hogyha van egy kis szabadidőd utazás vagy várakozás közben, de akár terápiás célokra is alkalmazható nyugtató és fülbemászó effekthangjaival és szembarát sötét témájával.",
+    "translatorcredit": "Fordította a Pro-grammers csapata",
+    "@translatorcredit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "languages": "Nyelvek",
+    "@languages": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "defaultlang": "Rendszernyelv",
+    "@defaultlang": {
+        "description": "Language set by the operating system",
         "type": "text",
         "placeholders": {}
     }
