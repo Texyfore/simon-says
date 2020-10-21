@@ -28,12 +28,13 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "continuegame" : MessageLookupByLibrary.simpleMessage("Devam et"),
+    "defaultlang" : MessageLookupByLibrary.simpleMessage("Sistem dili"),
     "devby" : m0,
     "fast" : MessageLookupByLibrary.simpleMessage("Hızlı"),
     "gameTime" : MessageLookupByLibrary.simpleMessage("Oyun süresi"),
     "gameover" : MessageLookupByLibrary.simpleMessage("Oyun Bitti"),
     "gamesPlayed" : MessageLookupByLibrary.simpleMessage("Oynanan oyun sayısı"),
-    "languages" : MessageLookupByLibrary.simpleMessage(""),
+    "languages" : MessageLookupByLibrary.simpleMessage("Diller"),
     "longestStreak" : MessageLookupByLibrary.simpleMessage("Yanmadan oynanan en çok el sayısı"),
     "music" : MessageLookupByLibrary.simpleMessage("Müzik"),
     "newgame" : MessageLookupByLibrary.simpleMessage("Yeni Oyun"),

@@ -28,9 +28,10 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "continuegame" : MessageLookupByLibrary.simpleMessage("Continue"),
+    "defaultlang" : MessageLookupByLibrary.simpleMessage("System language"),
     "devby" : m0,
     "fast" : MessageLookupByLibrary.simpleMessage("Fast"),
-    "gameTime" : MessageLookupByLibrary.simpleMessage("Game time"),
+    "gameTime" : MessageLookupByLibrary.simpleMessage("Time played"),
     "gameover" : MessageLookupByLibrary.simpleMessage("Game over"),
     "gamesPlayed" : MessageLookupByLibrary.simpleMessage("Games played"),
     "languages" : MessageLookupByLibrary.simpleMessage("Languages"),

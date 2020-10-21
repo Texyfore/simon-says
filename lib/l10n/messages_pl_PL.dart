@@ -28,12 +28,13 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "continuegame" : MessageLookupByLibrary.simpleMessage("Powrót do gry"),
+    "defaultlang" : MessageLookupByLibrary.simpleMessage("System language"),
     "devby" : m0,
     "fast" : MessageLookupByLibrary.simpleMessage("Szybko"),
     "gameTime" : MessageLookupByLibrary.simpleMessage("Czas gry"),
     "gameover" : MessageLookupByLibrary.simpleMessage("Koniec gry"),
     "gamesPlayed" : MessageLookupByLibrary.simpleMessage("Rozegrane gry"),
-    "languages" : MessageLookupByLibrary.simpleMessage(""),
+    "languages" : MessageLookupByLibrary.simpleMessage("Languages"),
     "longestStreak" : MessageLookupByLibrary.simpleMessage("Kafelki z rzędu"),
     "music" : MessageLookupByLibrary.simpleMessage("Muzyka"),
     "newgame" : MessageLookupByLibrary.simpleMessage("Nowa gra"),

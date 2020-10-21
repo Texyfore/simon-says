@@ -21,18 +21,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m0(developer) => "Készítették:\n${developer}";
 
-  static m1(speed) => "Gyorsaság: ${speed}";
+  static m1(speed) => "Sebesség: ${speed}";
 
   static m2(tiles) => "Csempék: ${tiles}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "continuegame" : MessageLookupByLibrary.simpleMessage("Folytatás"),
+    "defaultlang" : MessageLookupByLibrary.simpleMessage("Rendszernyelv"),
     "devby" : m0,
     "fast" : MessageLookupByLibrary.simpleMessage("Gyors"),
     "gameTime" : MessageLookupByLibrary.simpleMessage("Játékidő"),
     "gameover" : MessageLookupByLibrary.simpleMessage("Játék vége"),
     "gamesPlayed" : MessageLookupByLibrary.simpleMessage("Játékok"),
+    "languages" : MessageLookupByLibrary.simpleMessage("Nyelvek"),
     "longestStreak" : MessageLookupByLibrary.simpleMessage("Leghosszabb sorozat"),
     "music" : MessageLookupByLibrary.simpleMessage("Zene"),
     "newgame" : MessageLookupByLibrary.simpleMessage("Új játék"),
@@ -42,11 +44,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "quit" : MessageLookupByLibrary.simpleMessage("Kilépés"),
     "settings" : MessageLookupByLibrary.simpleMessage("Beállítások"),
     "slow" : MessageLookupByLibrary.simpleMessage("Lassú"),
-    "speed" : MessageLookupByLibrary.simpleMessage("Gyorsaság"),
+    "speed" : MessageLookupByLibrary.simpleMessage("Sebesség"),
     "speed_enum" : m1,
     "statistics" : MessageLookupByLibrary.simpleMessage("Statisztikák"),
     "tiles" : MessageLookupByLibrary.simpleMessage("Csempék"),
     "tiles_num" : m2,
+    "translatorcredit" : MessageLookupByLibrary.simpleMessage("Fordította a Pro-grammers csapata"),
     "veryfast" : MessageLookupByLibrary.simpleMessage("Nagyon gyors")
   };
 }
