@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-10-21T16:45:11.858527",
+  "@@last_modified": "2020-10-21T17:19:34.912798",
   "play": "Play",
   "@play": {
     "type": "text",
@@ -122,7 +122,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "translatorcredit": "CREDIT HERE",
+  "translatorcredit": "Translated by the Pro-grammers team",
   "@translatorcredit": {
     "type": "text",
     "placeholders": {}

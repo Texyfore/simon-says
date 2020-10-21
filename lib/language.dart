@@ -88,7 +88,8 @@ class AppLocalizations {
   String get languages =>
       Intl.message("Languages", name: "languages", locale: localeName);
   String get translatorcredit =>
-      Intl.message("CREDIT HERE", name: "translatorcredit", locale: localeName);
+      Intl.message("Translated by the Pro-grammers team",
+          name: "translatorcredit", locale: localeName);
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

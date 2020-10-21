@@ -48,7 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "statistics" : MessageLookupByLibrary.simpleMessage("Statistics"),
     "tiles" : MessageLookupByLibrary.simpleMessage("Tiles"),
     "tiles_num" : m2,
-    "translatorcredit" : MessageLookupByLibrary.simpleMessage("CREDIT HERE"),
+    "translatorcredit" : MessageLookupByLibrary.simpleMessage("Translated by the Pro-grammers team"),
     "veryfast" : MessageLookupByLibrary.simpleMessage("Very fast")
   };
 }
