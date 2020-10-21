@@ -63,7 +63,7 @@ class SettingsSliver extends StatelessWidget {
             ),
           ),
           SettingsSliverHeader(
-            title: 'Languages',
+            title: lang.languages,
             padding: EdgeInsets.only(right: 40.0, left: 40.0, top: 0.0, bottom: 0.0),
           ),
           SliverFixedExtentList(
