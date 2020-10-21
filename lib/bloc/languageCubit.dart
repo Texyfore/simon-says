@@ -7,39 +7,35 @@ import 'package:simon_says/language.dart';
 
 class LanguageCubit extends Cubit<int> {
   SharedPreferences prefs;
-  Locale get pref {
-    var localeName = prefs.getString("language");
-    if (localeName == null) {
-      return null;
-    }
-    var language = localeName.split("_")[0];
-    var country = localeName.split("_")[1];
-    var locale = Locale(language, country);
-    return locale;
+  int get pref {
+    return prefs.getInt("language");
   }
 
-  set pref(Locale val) {
-    var localeName = val.toString();
-    prefs.setString("language", localeName);
+  set pref(int val) {
+    prefs.setInt("language", val);
   }
 
   @override
   void onChange(Change<int> change) {
-    pref = this.toLocale();
+    pref = change.nextState;
     super.onChange(change);
   }
 
   LanguageCubit(this.prefs)
       : assert(prefs != null),
-        super(4) {
+        super(-1) {
     var _pref = pref;
     if (_pref != null) {
-      changeLocale(_pref);
+      setIndex(_pref);
     }
   }
 
   Locale toLocale() {
     return supportedLanguages[state].locale;
+  }
+
+  Locale valueToLocale(int value) {
+    return supportedLanguages[value].locale;
   }
 
   void changeLocale(Locale locale) {
