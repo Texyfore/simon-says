@@ -1,5 +1,5 @@
 {
-    "@@last_modified": "2020-10-21T14:20:09+0000",
+    "@@last_modified": "2020-10-21T17:34:38+0000",
     "play": "プレー",
     "@play": {
         "type": "text",
@@ -124,8 +124,14 @@
         "type": "text",
         "placeholders": {}
     },
-    "languages": "",
+    "languages": "言語",
     "@languages": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "defaultlang": "システム言語",
+    "@defaultlang": {
+        "description": "Language set by the operating system",
         "type": "text",
         "placeholders": {}
     }
