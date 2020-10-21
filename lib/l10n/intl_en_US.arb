@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-10-21T17:19:34.912798",
+  "@@last_modified": "2020-10-21T18:57:40.492436",
   "play": "Play",
   "@play": {
     "type": "text",
@@ -124,6 +124,12 @@
   },
   "translatorcredit": "Translated by the Pro-grammers team",
   "@translatorcredit": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "defaultlang": "System language",
+  "@defaultlang": {
+    "description": "Language set by the operating system",
     "type": "text",
     "placeholders": {}
   }
