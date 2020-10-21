@@ -128,5 +128,11 @@
     "@languages": {
         "type": "text",
         "placeholders": {}
+    },
+    "defaultlang": "",
+    "@defaultlang": {
+        "description": "Language set by the operating system",
+        "type": "text",
+        "placeholders": {}
     }
 }
