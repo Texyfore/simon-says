@@ -124,12 +124,12 @@
         "type": "text",
         "placeholders": {}
     },
-    "languages": "",
+    "languages": "Languages",
     "@languages": {
         "type": "text",
         "placeholders": {}
     },
-    "defaultlang": "",
+    "defaultlang": "System language",
     "@defaultlang": {
         "description": "Language set by the operating system",
         "type": "text",
