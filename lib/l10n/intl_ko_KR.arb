@@ -1,0 +1,138 @@
+{
+    "@@last_modified": "2020-10-21T17:39:17+0000",
+    "play": "놀다",
+    "@play": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "statistics": "통계학",
+    "@statistics": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "settings": "설정",
+    "@settings": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "devby": "의해 만들어진:\n{developer}",
+    "@devby": {
+        "type": "text",
+        "placeholders": {
+            "developer": {
+                "example": "Pro-grammers"
+            }
+        }
+    },
+    "tiles": "타일",
+    "@tiles": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "speed": "속도",
+    "@speed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "music": "음악",
+    "@music": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gamesPlayed": "놀이를 하다",
+    "@gamesPlayed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "longestStreak": "가장 긴 스트리크",
+    "@longestStreak": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameTime": "노는 시간",
+    "@gameTime": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "tiles_num": "타일: {tiles}",
+    "@tiles_num": {
+        "type": "text",
+        "placeholders": {
+            "tiles": {
+                "example": "5"
+            }
+        }
+    },
+    "speed_enum": "속도: {speed}",
+    "@speed_enum": {
+        "type": "text",
+        "placeholders": {
+            "speed": {
+                "example": "Fast"
+            }
+        }
+    },
+    "slow": "느린",
+    "@slow": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "normal": "정상",
+    "@normal": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "fast": "빨리",
+    "@fast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "veryfast": "매우 빨리",
+    "@veryfast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "paused": "일시 정지한",
+    "@paused": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "continuegame": "계속하다",
+    "@continuegame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "quit": "그만두다",
+    "@quit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameover": "게임 오버",
+    "@gameover": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "newgame": "신작 게임",
+    "@newgame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "descriptionshort": "고전적인 ‘시몬 가라사대’ 기억력 게임",
+    "description": "CICMO는 현대적이고 날렵한 외모와 매력적인 음악으로 사이먼세이 게임의 일반적인 게임 플레이를 전달한다. 게임의 목적은 타일을 올바른 순서로 누르는 것이다. 각 라운드에서 플레이어는 점점 더 긴 순서를 외우고 그 순서대로 타일을 눌러야 한다. CICMO는 여행이나 대기 중에 약간의 자유시간이 있다면 완벽한 취미생활로, 진정과 캐치한 효과음, 눈을 사로잡는 다크테마 등으로 치료 목적에도 활용할 수 있다.",
+    "translatorcredit": "누군가에 의해 번역된",
+    "@translatorcredit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "languages": "언어",
+    "@languages": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "defaultlang": "시스템 언어",
+    "@defaultlang": {
+        "description": "Language set by the operating system",
+        "type": "text",
+        "placeholders": {}
+    }
+}
