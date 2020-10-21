@@ -90,11 +90,23 @@ class SettingsSliver extends StatelessWidget {
                     langCubit.changeLocale(language.locale);
                   };
                 }
-                return RadioListTile(
-                  title: Text(languageName),
-                  onChanged: (_) => onClick(),
-                  value: index,
-                  groupValue: selectedLanguage + 1,
+                return Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 60.0),
+                  child: RadioListTile(
+                    title: Text(
+                      languageName,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 20.0,
+                        color: letterColor,
+                      ),
+                    ),
+                    onChanged: (_) => onClick(),
+                    value: index,
+                    groupValue: selectedLanguage + 1,
+                    activeColor: letterColor,
+                  ),
                 );
               }, childCount: supportedLanguages.length + 1),
             );
