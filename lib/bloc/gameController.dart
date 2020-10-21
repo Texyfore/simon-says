@@ -60,7 +60,6 @@ class GameController {
 
   void input(_ControllableButton button) {
     //Ha éppen a kombináció játszódik le, akkor tiltsa le a bemeneted
-    //TODO: Gomb állapotának átállítása
 
     if (isPlaying) {
       return;

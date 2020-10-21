@@ -5,7 +5,6 @@ import 'package:simon_says/bloc/languageCubit.dart';
 import 'package:simon_says/bloc/musicCubit.dart';
 import 'package:simon_says/bloc/tilesCubit.dart';
 import 'package:simon_says/language.dart';
-import 'package:simon_says/widgets/languageSelectButton.dart';
 import 'package:simon_says/widgets/settings/boolSetting.dart';
 import 'package:simon_says/widgets/settings/speedSetting.dart';
 import 'package:simon_says/widgets/settingsSliverHeader.dart';

@@ -18,7 +18,6 @@
 // - 'Jó sorozat' hang, 'rossz sorozat' hang
 // - Szünet menü
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -67,7 +66,7 @@ class AppWidget extends StatelessWidget {
               BlocProvider(create: (_) => GameTimeCubit(prefs)),
               BlocProvider(create: (_) => LongestStreakCubit(prefs)),
               //Language selector
-              BlocProvider(create: (_) => LanguageCubit(-1)),
+              BlocProvider(create: (_) => LanguageCubit(prefs)),
               //Music volume
               BlocProvider(create: (_) => VolumeCubit()),
             ],

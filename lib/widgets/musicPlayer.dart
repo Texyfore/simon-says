@@ -14,7 +14,6 @@ class MusicPlayer extends StatefulWidget {
   _MusicPlayerState createState() => _MusicPlayerState();
 }
 
-//TODO: React to Music setting
 class _MusicPlayerState extends State<MusicPlayer>
     with SingleTickerProviderStateMixin, WidgetsBindingObserver {
   Future<AudioPlayer> player;
