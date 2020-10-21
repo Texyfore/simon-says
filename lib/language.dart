@@ -8,9 +8,11 @@ const supportedLanguages = [
   LanguageOptions(Locale("en", "US"), "English"),
   LanguageOptions(Locale("hu", "HU"), "Magyar"),
   LanguageOptions(Locale("de", "DE"), "Deutsche"),
+  LanguageOptions(Locale("pl", "PL"), "Polski"),
   LanguageOptions(Locale("nl", "NL"), "Nederlands"),
   LanguageOptions(Locale("tr", "TR"), "Türk"),
   LanguageOptions(Locale("ro", "RO"), "Română"),
+  LanguageOptions(Locale("ko", "KR"), "한국어"),
   LanguageOptions(Locale("ja", "JP"), "日本語"),
 ];
 
