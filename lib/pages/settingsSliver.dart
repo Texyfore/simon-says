@@ -113,6 +113,37 @@ class SettingsSliver extends StatelessWidget {
                 ]
             ),
           ),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 10.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Divider(
+                        thickness: 1.5,
+                        color: letterColor,
+                      ),
+                      Text(
+                        lang.translatorcredit,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 18.0,
+                          color: letterColor,
+                        ),
+                      ),
+                      Divider(
+                        thickness: 1.5,
+                        color: letterColor,
+                      ),
+                    ],
+                  ),
+                ),
+              ]
+            ),
+          ),
         ],
       ),
     );
