@@ -1,3 +1,24 @@
+// CICMO
+// Csapat: Pro-grammers
+
+// Plusz funkciók:
+// - Állítható csempe szám
+// - Főmenü zene
+// - Statisztikák képernyő: Leghosszabb sorozat, Játszott játékok, Játékkal töltött idő
+// - Állítható nyelv
+// - Támogatott nyelvek: magyar, angol, német, holland, lengyel, román, török, japán, koreai
+// - Oldalváltáskor átmenet animáció
+// - Saját logó
+// - Támogatott platformok: Android, Windows, web
+// - Applikáció elindításakor splash image
+// Játékon belüli plusz funkciók
+// - Automatikus csempe szín kiosztás
+// - Minden csempének külön hangmagasság
+// - Csempéken Inkwell animáció
+// - 'Jó sorozat' hang, 'rossz sorozat' hang
+// - Szünet menü
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
