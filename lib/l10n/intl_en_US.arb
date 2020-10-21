@@ -1,136 +1,138 @@
 {
-  "@@last_modified": "2020-10-21T18:57:40.492436",
-  "play": "Play",
-  "@play": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "statistics": "Statistics",
-  "@statistics": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "settings": "Settings",
-  "@settings": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "devby": "Made by:\n{developer}",
-  "@devby": {
-    "type": "text",
-    "placeholders": {
-      "developer": {
-        "example": "Pro-grammers"
-      }
+    "@@last_modified": "2020-10-21T16:58:50+0000",
+    "play": "Play",
+    "@play": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "statistics": "Statistics",
+    "@statistics": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "settings": "Settings",
+    "@settings": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "devby": "Made by:\n{developer}",
+    "@devby": {
+        "type": "text",
+        "placeholders": {
+            "developer": {
+                "example": "Pro-grammers"
+            }
+        }
+    },
+    "tiles": "Tiles",
+    "@tiles": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "speed": "Speed",
+    "@speed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "music": "Music",
+    "@music": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gamesPlayed": "Games played",
+    "@gamesPlayed": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "longestStreak": "Longest streak",
+    "@longestStreak": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameTime": "Time played",
+    "@gameTime": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "tiles_num": "Tiles: {tiles}",
+    "@tiles_num": {
+        "type": "text",
+        "placeholders": {
+            "tiles": {
+                "example": "5"
+            }
+        }
+    },
+    "speed_enum": "Speed: {speed}",
+    "@speed_enum": {
+        "type": "text",
+        "placeholders": {
+            "speed": {
+                "example": "Fast"
+            }
+        }
+    },
+    "slow": "Slow",
+    "@slow": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "normal": "Normal",
+    "@normal": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "fast": "Fast",
+    "@fast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "veryfast": "Very fast",
+    "@veryfast": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "paused": "Paused",
+    "@paused": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "continuegame": "Continue",
+    "@continuegame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "quit": "Quit",
+    "@quit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "gameover": "Game over",
+    "@gameover": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "newgame": "New game",
+    "@newgame": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "descriptionshort": "The classical Simon Says memory game",
+    "description": "CICMO delivers the usual gameplay of Simon-say games with a modern, sleek look and catchy music. The object of the game is to press the tiles in the correct order; in each round, the player must memorize an increasingly longer sequence and then press the tiles in that order. CICMO is the perfect pastime if you have a little free time while traveling or waiting, and it can also be used for therapeutic purposes with its soothing and catchy effect tones and eye-catching dark theme.",
+    "translatorcredit": "Translated by the Pro-grammers team",
+    "@translatorcredit": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "languages": "Languages",
+    "@languages": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "defaultlang": "System language",
+    "@defaultlang": {
+        "description": "Language set by the operating system",
+        "type": "text",
+        "placeholders": {}
     }
-  },
-  "tiles": "Tiles",
-  "@tiles": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "speed": "Speed",
-  "@speed": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "music": "Music",
-  "@music": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "gamesPlayed": "Games played",
-  "@gamesPlayed": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "longestStreak": "Longest streak",
-  "@longestStreak": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "gameTime": "Game time",
-  "@gameTime": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "tiles_num": "Tiles: {tiles}",
-  "@tiles_num": {
-    "type": "text",
-    "placeholders": {
-      "tiles": {
-        "example": "5"
-      }
-    }
-  },
-  "speed_enum": "Speed: {speed}",
-  "@speed_enum": {
-    "type": "text",
-    "placeholders": {
-      "speed": {
-        "example": "Fast"
-      }
-    }
-  },
-  "slow": "Slow",
-  "@slow": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "normal": "Normal",
-  "@normal": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "fast": "Fast",
-  "@fast": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "veryfast": "Very fast",
-  "@veryfast": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "paused": "Paused",
-  "@paused": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "continuegame": "Continue",
-  "@continuegame": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "quit": "Quit",
-  "@quit": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "gameover": "Game over",
-  "@gameover": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "newgame": "New game",
-  "@newgame": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "languages": "Languages",
-  "@languages": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "translatorcredit": "Translated by the Pro-grammers team",
-  "@translatorcredit": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "defaultlang": "System language",
-  "@defaultlang": {
-    "description": "Language set by the operating system",
-    "type": "text",
-    "placeholders": {}
-  }
 }
