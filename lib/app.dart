@@ -80,7 +80,7 @@ class AppWidget extends StatelessWidget {
                   GlobalCupertinoLocalizations.delegate,
                 ],
                 supportedLocales: supportedLocales,
-                locale: selectedLanguage > 0
+                locale: selectedLanguage >= 0
                     ? supportedLanguages[selectedLanguage].locale
                     : null,
                 localeListResolutionCallback: (locale, supportedLocales) {
