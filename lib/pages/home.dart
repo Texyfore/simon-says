@@ -167,7 +167,7 @@ class Home extends StatelessWidget {
 
                   // Csapatnév
                   Text(
-                    lang.devby("Pro-grammers"),
+                    lang.devby("Texyfore"),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontFamily: 'Poppins',
@@ -183,6 +183,6 @@ class Home extends StatelessWidget {
           ),
         ),
       ),
-    ) ;
+    );
   }
 }

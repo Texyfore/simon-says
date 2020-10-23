@@ -52,7 +52,7 @@ class AppLocalizations {
       name: "devby",
       args: [developer],
       locale: localeName,
-      examples: const {'developer': 'Pro-grammers'});
+      examples: const {'developer': 'Texyfore'});
   String get tiles => Intl.message("Tiles", name: "tiles", locale: localeName);
   String get speed => Intl.message("Speed", name: "speed", locale: localeName);
   String get music => Intl.message("Music", name: "music", locale: localeName);
