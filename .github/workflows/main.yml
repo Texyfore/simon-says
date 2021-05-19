@@ -38,6 +38,5 @@ jobs:
     - name: Artifact Apps
       uses: actions/upload-artifact@v2
       with:
-        tag: ${{ env.APP_VERSION }}
-        name: ${{ env.APP_VERSION }}
+        name: "ios-app"
         path: "build/ios/iphoneos/app.ipa"
